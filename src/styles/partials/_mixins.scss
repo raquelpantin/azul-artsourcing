@@ -3,6 +3,12 @@
 @use "./_variables.scss" as *;
 
 /*Responsiveness*/
+@mixin mobile {
+  @media screen and (max-width: 766px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media screen and (min-width: 767px) {
     @content;

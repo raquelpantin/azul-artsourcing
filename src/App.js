@@ -1,14 +1,21 @@
 import "./App.scss";
+import PageHeader from "./components/PageHeader/PageHeader";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>HELLO</h1>
-      </header>
-      <main></main>
-      <footer></footer>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <PageHeader />
+        </header>
+        <main>
+          <Routes></Routes>
+        </main>
+        <footer></footer>
+      </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,191 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.header {
+  background-color: $header;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  @include tablet {
+    padding-top: toRem(32);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__top {
+    padding: 0 toRem(16);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    @include tablet {
+      padding: 0 toRem(32);
+      justify-content: normal;
+    }
+  }
+
+  &__title {
+    font-family: $logo;
+    font-size: toRem(18);
+    @include tablet {
+      font-size: toRem(34);
+    }
+  }
+
+  &__searchbar {
+    position: relative;
+    display: flex;
+    width: auto;
+    @include tablet {
+      width: 90%;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
+
+  &__search-input {
+    height: toRem(24);
+    border-radius: 10px;
+    border: none;
+    padding-left: 1rem;
+    width: 100%;
+    @include tablet {
+      height: toRem(32);
+      border-radius: toRem(16);
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid $btnfill;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: 8rem;
+    filter: invert(75%) sepia(8%) saturate(342%) hue-rotate(190deg)
+      brightness(90%) contrast(82%);
+
+    @include tablet {
+      left: 90%;
+      bottom: 0.25rem;
+    }
+  }
+
+  &__navlist {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid $white;
+    position: absolute;
+    top: 60px;
+    bottom: 0rem;
+    opacity: 1;
+    transition: all 0.5s ease;
+    text-align: center;
+
+    @include tablet {
+      flex-direction: row;
+      list-style: none;
+      text-align: center;
+      height: toRem(48);
+      padding-bottom: 1rem;
+      top: 90px;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      border-top: none;
+      background-color: $header;
+      transition: none;
+    }
+  }
+
+  &__navlist.active {
+    @include mobile {
+      background-color: $header;
+      bottom: toRem(-95);
+      text-align: center;
+      padding-top: 0.5rem;
+    }
+  }
+
+  &__navlist-item {
+    @include mobile {
+      &:hover {
+        background-color: $card;
+        height: 100%;
+      }
+    }
+    @include tablet {
+      margin-right: 1rem;
+      align-items: center;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__navlist-links--active {
+    text-align: center;
+  }
+
+  &__navlist-links {
+    color: $white;
+  }
+
+  &__icons {
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__navlist-divider {
+    display: none;
+    @include tablet {
+      display: flex;
+      height: 1.75rem;
+      border-right: 2px solid $white;
+      padding-left: 1rem;
+    }
+  }
+}
+
+::placeholder {
+  color: $placeholder;
+  font-family: $regular;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+Link:hover {
+  cursor: pointer;
+}
+
+li {
+  @include tablet {
+    display: flex;
+  }
+}
