@@ -1,0 +1,28 @@
+@use "./_function.scss" as *;
+@use "./_colors.scss" as *;
+@use "./_variables.scss" as *;
+
+/*Responsiveness*/
+@mixin tablet {
+  @media screen and (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+/*Layout Grid*/
+@mixin layout {
+  margin: 0 toRem(16);
+  @include tablet {
+    margin: 0 toRem(32);
+  }
+  @include desktop {
+    margin: 0 auto;
+    max-width: toRem(1020);
+  }
+}
