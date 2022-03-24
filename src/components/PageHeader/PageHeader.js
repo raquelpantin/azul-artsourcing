@@ -61,7 +61,6 @@ function PageHeader() {
             >
               HOME
             </NavLink>
-            <div className="header__navlist-divider"></div>
           </li>
           <li className="header__navlist-item">
             <NavLink

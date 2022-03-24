@@ -60,11 +60,12 @@
   }
 
   &__search-input {
-    height: toRem(24);
+    height: toRem(26);
     border-radius: 10px;
     border: none;
     padding-left: 1rem;
     width: 100%;
+    color: $text;
     @include tablet {
       height: toRem(32);
       border-radius: toRem(16);
@@ -97,6 +98,7 @@
     position: absolute;
     top: 60px;
     bottom: 0rem;
+
     opacity: 1;
     transition: all 0.5s ease;
     text-align: center;
@@ -188,4 +190,8 @@ li {
   @include tablet {
     display: flex;
   }
+}
+
+.hidden {
+  display: none;
 }

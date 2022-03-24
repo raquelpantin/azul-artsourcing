@@ -1,6 +1,7 @@
 import "./App.scss";
 import PageHeader from "./components/PageHeader/PageHeader";
-
+import PageFooter from "./components/PageFooter/PageFooter";
+import HomePage from "./components/HomePage/HomePage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -11,9 +12,13 @@ function App() {
           <PageHeader />
         </header>
         <main>
-          <Routes></Routes>
+          <Routes>
+            <Route path="/" exact element={<HomePage />} />
+          </Routes>
         </main>
-        <footer></footer>
+        <footer>
+          <PageFooter />
+        </footer>
       </div>
     </Router>
   );

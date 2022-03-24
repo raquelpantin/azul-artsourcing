@@ -1,0 +1,47 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.footer {
+  //   background-color: $white;
+  background-color: lightblue;
+  padding-left: toRem(16);
+  padding-right: toRem(16);
+  padding-top: toRem(8);
+  border-top: 4px solid $footerborder;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    color: $text;
+  }
+
+  &__item {
+    font-size: toRem(8);
+    font-weight: $bold;
+    margin-bottom: toRem(8);
+  }
+
+  &__logo {
+    font-family: $logo;
+    font-size: toRem(12);
+  }
+
+  &__container-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: toRem(8);
+  }
+
+  &__footnote {
+    font-size: toRem(9);
+    margin-left: toRem(32);
+  }
+}

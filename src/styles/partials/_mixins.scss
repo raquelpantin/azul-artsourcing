@@ -32,3 +32,19 @@
     max-width: toRem(1020);
   }
 }
+
+//Animation
+@mixin slideAnimation {
+  @keyframes slideOut {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(-3px);
+    }
+  }
+
+  animation-name: slideOut;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
