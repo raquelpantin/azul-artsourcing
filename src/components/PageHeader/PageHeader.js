@@ -1,112 +1,70 @@
 import "./PageHeader.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import search from "../../assets/icons/search_black_24dp.svg";
-import login from "../../assets/icons/login_white_24dp.svg";
-import logout from "../../assets/icons/logout_white_24dp.svg";
 import menu from "../../assets/icons/menu_white_24dp.svg";
-import user from "../../assets/icons/person_white_24dp.svg";
-import message from "../../assets/icons/mail_white_24dp.svg";
 import close from "../../assets/icons/close_white_24dp.svg";
+import search from "../../assets/icons/search_black_24dp.svg";
 
-function PageHeader() {
-  const [click, setClick] = useState(false);
-
-  const handleClick = () => setClick(!click);
+const PageHeader = () => {
+  const [isMobile, setIsMobile] = useState(false);
 
   return (
-    <div className="header">
-      <div className="header__container">
-        <div className="header__top">
-          <Link className="header__link" to="/">
-            <h1 className="header__title">AZUL</h1>
-          </Link>
-          <div className="header__searchbar">
-            <input
-              className="header__search-input"
-              type="text"
-              placeholder="Search..."
-            ></input>
-            <img
-              className="header__search-icon"
-              src={search}
-              alt="search icon"
-            />
-          </div>
-          <div className="header__icons">
-            <Link
-              className="header__icons-menu--link"
-              to="/"
-              onClick={handleClick}
-            >
-              {click ? (
-                <img className="header__icons-close" src={close} alt="menu" />
-              ) : (
-                <img className="header__icons-menu" src={menu} alt="menu" />
-              )}
-            </Link>
-          </div>
+    <div>
+      <nav className="navbar">
+        <h1 className="navbar__logo">AZUL</h1>
+        <div className="navbar__searchbar">
+          <input
+            className="navbar__search-input"
+            type="text"
+            placeholder="Search..."
+          ></input>
+          <img className="navbar__search-icon" src={search} alt="search icon" />
         </div>
-
-        <ul className={click ? "header__navlist active" : "header__navlist"}>
-          <li className="header__navlist-item">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "header__navlist-links--active"
-                  : "header__navlist-links"
-              }
-              onClick={handleClick}
-            >
-              HOME
-            </NavLink>
-          </li>
-          <li className="header__navlist-item">
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? "header__navlist-links--active"
-                  : "header__navlist-links"
-              }
-              onClick={handleClick}
-            >
-              ABOUT
-            </NavLink>
-            <div className="header__navlist-divider"></div>
-          </li>
-          <li className="header__navlist-item">
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                isActive
-                  ? "header__navlist-links--active"
-                  : "header__navlist-links"
-              }
-              onClick={handleClick}
-            >
-              CONTACT
-            </NavLink>
-            <div className="header__navlist-divider"></div>
-          </li>
-          <li className="header__navlist-item">
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                isActive
-                  ? "header__navlist-links--active"
-                  : "header__navlist-links"
-              }
-              onClick={handleClick}
-            >
-              LOGIN
-            </NavLink>
-          </li>
+        <ul
+          className={isMobile ? "nav-links-mobile" : "nav-links"}
+          onClick={() => setIsMobile(false)}
+        >
+          <Link to="/" className="homelink">
+            <li>HOME</li>
+          </Link>
+          <Link to="/about" className="about">
+            <li>ABOUT</li>
+          </Link>
+          <Link to="/contact" className="contact">
+            <li>CONTACT</li>
+          </Link>
+          <Link to="/login" className="login">
+            <li>LOGIN</li>
+          </Link>
         </ul>
-      </div>
+
+        <Link className="icons" to="/" onClick={() => setIsMobile(!isMobile)}>
+          {isMobile ? (
+            <img className="mobile-close" src={close} alt="close" />
+          ) : (
+            <img className="mobile-menu" src={menu} alt="menu" />
+          )}
+        </Link>
+      </nav>
+      <ul className="navbar__tblt-dt">
+        <Link to="/" className="homelink">
+          <li>HOME</li>
+        </Link>
+        <div className="navbar__divider"></div>
+        <Link to="/about" className="about">
+          <li>ABOUT</li>
+        </Link>
+        <div className="navbar__divider"></div>
+        <Link to="/contact" className="contact">
+          <li>CONTACT</li>
+        </Link>
+        <div className="navbar__divider"></div>
+        <Link to="/login" className="login">
+          <li>LOGIN</li>
+        </Link>
+      </ul>
     </div>
   );
-}
+};
 
 export default PageHeader;

@@ -5,193 +5,164 @@
 @use "../../styles/partials/_mixins.scss" as *;
 @use "../../styles/partials/_function.scss" as *;
 
-.header {
-  background-color: $header;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.navbar {
   display: flex;
-  width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 20;
+  width: 100%;
+  height: 75px;
+  background-color: $header;
+  padding-left: 1rem;
+  padding-right: 1rem;
   @include tablet {
-    padding-top: toRem(32);
-  }
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  &__top {
-    padding: 0 toRem(16);
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    @include tablet {
-      padding: 0 toRem(32);
-      justify-content: normal;
-    }
-  }
-
-  &__title {
-    font-family: $logo;
-    font-size: toRem(18);
-    @include tablet {
-      font-size: toRem(34);
-    }
-  }
-
-  &__searchbar {
-    position: relative;
-    display: flex;
-    width: auto;
-    @include tablet {
-      width: 90%;
-      margin-left: 2rem;
-      margin-right: 2rem;
-    }
-  }
-
-  &__search-input {
-    height: toRem(26);
-    border-radius: 10px;
-    border: none;
-    padding-left: 1rem;
-    width: 100%;
-    color: $text;
-    @include tablet {
-      height: toRem(32);
-      border-radius: toRem(16);
-    }
-
-    &:focus {
-      outline: none;
-      border: 2px solid $btnfill;
-    }
-  }
-
-  &__search-icon {
-    position: absolute;
-    left: 8rem;
-    filter: invert(75%) sepia(8%) saturate(342%) hue-rotate(190deg)
-      brightness(90%) contrast(82%);
-
-    @include tablet {
-      left: 90%;
-      bottom: 0.25rem;
-    }
-  }
-
-  &__navlist {
-    background-color: $white;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-top: 1px solid $white;
-    position: absolute;
-    top: 60px;
-    bottom: 0rem;
-
-    opacity: 1;
-    transition: all 0.5s ease;
-    text-align: center;
-
-    @include tablet {
-      flex-direction: row;
-      list-style: none;
-      text-align: center;
-      height: toRem(48);
-      padding-bottom: 1rem;
-      top: 90px;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      border-top: none;
-      background-color: $header;
-      transition: none;
-    }
-  }
-
-  &__navlist.active {
-    @include mobile {
-      background-color: $header;
-      bottom: toRem(-95);
-      text-align: center;
-      padding-top: 0.5rem;
-    }
-  }
-
-  &__navlist-item {
-    @include mobile {
-      &:hover {
-        background-color: $card;
-        height: 100%;
-      }
-    }
-    @include tablet {
-      margin-right: 1rem;
-      align-items: center;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  &__navlist-links--active {
-    text-align: center;
-  }
-
-  &__navlist-links {
-    color: $white;
-  }
-
-  &__icons {
-    @include tablet {
-      display: none;
-    }
-    @include desktop {
-      display: none;
-    }
-  }
-
-  &__navlist-divider {
-    display: none;
-    @include tablet {
-      display: flex;
-      height: 1.75rem;
-      border-right: 2px solid $white;
-      padding-left: 1rem;
-    }
+    padding-left: toRem(36);
+    padding-right: toRem(36);
   }
 }
 
-::placeholder {
-  color: $placeholder;
-  font-family: $regular;
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  width: 75%;
 }
 
-a {
-  text-decoration: none;
+.navbar__logo {
+  font-size: toRem(24);
   color: $white;
+  font-family: $logo;
+  margin-right: 0.5rem;
 }
 
-Link:hover {
+.homelink,
+.about,
+.login,
+.contact {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 10px;
   cursor: pointer;
+  @include tablet {
+    font-size: toRem(16);
+    position: relative;
+    color: $white;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: $btnfill;
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
 }
 
-li {
+.icons {
   @include tablet {
+    display: none;
+  }
+}
+
+@include mobile {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links-mobile {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background-color: #0063a3d6;
+    left: 0;
+    top: 75px;
+    transition: all 1000ms ease-in;
+    width: 100%;
+    z-index: 20;
+  }
+
+  .homelink,
+  .about,
+  .contact,
+  .login {
+    color: $white;
+    font-family: $main;
+    font-size: toRem(18);
+    text-align: center;
+    padding: 32px;
+    width: 100%;
+    transition: all 1000ms ease-in;
+    &:focus {
+      color: $btnfill;
+    }
+  }
+
+  .icons {
     display: flex;
   }
 }
 
-.hidden {
-  display: none;
+.navbar__searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $white;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  border: solid 1px $footerborder;
+}
+
+.navbar__search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: $main;
+  color: $text;
+  padding-left: 0.75rem;
+}
+
+.navbar__search-icon {
+  filter: invert(75%) sepia(8%) saturate(342%) hue-rotate(190deg)
+    brightness(90%) contrast(82%);
+}
+
+.nav-links {
+  @include tablet {
+    display: none;
+  }
+}
+
+.navbar__tblt-dt {
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $header;
+    padding-bottom: 0.75rem;
+    list-style: none;
+  }
+}
+
+.navbar__divider {
+  height: 1.5rem;
+  border-right: 2px solid $white;
+}
+
+.mobile-menu,
+.mobile-close {
+  margin-left: 0.5rem;
 }
