@@ -3,6 +3,7 @@ import PageHeader from "./components/PageHeader/PageHeader";
 import PageFooter from "./components/PageFooter/PageFooter";
 import HomePage from "./pages/HomePage/HomePage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -13,11 +14,11 @@ function App() {
           <PageHeader />
         </header>
         <main>
-          <SignUpPage />
-          {/* <Routes>
+          <Routes>
             <Route path="/" exact element={<HomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
-          </Routes> */}
+            <Route path="/login" element={<LoginPage />} />
+          </Routes>
         </main>
         <footer>
           <PageFooter />

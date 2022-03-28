@@ -12,6 +12,7 @@
   padding-right: toRem(16);
   padding-top: toRem(8);
   border-top: 4px solid $footerborder;
+
   @include tablet {
     padding-left: toRem(36);
   }
@@ -50,9 +51,9 @@
     align-items: center;
     padding-top: toRem(8);
     @include tablet {
-      padding-bottom: toRem(8);
       width: 62%;
       justify-content: space-between;
+      padding-bottom: toRem(16);
     }
   }
 

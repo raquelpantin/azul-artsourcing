@@ -40,7 +40,7 @@ const PageHeader = () => {
           </Link>
         </ul>
 
-        <Link className="icons" to="/" onClick={() => setIsMobile(!isMobile)}>
+        <Link className="icons" to="#" onClick={() => setIsMobile(!isMobile)}>
           {isMobile ? (
             <img className="mobile-close" src={close} alt="close" />
           ) : (
