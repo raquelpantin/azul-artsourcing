@@ -48,6 +48,9 @@
     @include tablet {
       font-size: toRem(62);
     }
+    @include desktop {
+      font-size: toRem(80);
+    }
   }
 
   &__hero-text {
@@ -59,6 +62,10 @@
     @include tablet {
       font-size: toRem(28);
       margin-left: 12rem;
+    }
+    @include desktop {
+      font-size: toRem(34);
+      margin-left: 17rem;
     }
   }
 
@@ -76,6 +83,12 @@
     }
     @include tablet {
       margin-left: toRem(160);
+      padding: toRem(12) toRem(17);
+    }
+    @include desktop {
+      margin-left: toRem(260);
+      padding: toRem(16) toRem(21);
+      border-radius: toRem(24);
     }
   }
 
@@ -90,6 +103,13 @@
     filter: $dropshadow;
     &:hover {
       @include slideAnimation;
+    }
+    @include tablet {
+      padding: toRem(12) toRem(17);
+    }
+    @include desktop {
+      padding: toRem(16) toRem(21);
+      border-radius: toRem(24);
     }
   }
 }

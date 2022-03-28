@@ -60,6 +60,9 @@
   overflow: hidden;
   cursor: pointer;
   position: relative;
+  @include desktop {
+    min-height: 65vh;
+  }
   .card-image {
     position: absolute;
     top: 0;

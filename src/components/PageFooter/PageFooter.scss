@@ -41,7 +41,6 @@
     font-size: toRem(12);
     @include tablet {
       font-size: toRem(24);
-      margin-right: toRem(175);
     }
   }
 
@@ -52,6 +51,8 @@
     padding-top: toRem(8);
     @include tablet {
       padding-bottom: toRem(8);
+      width: 62%;
+      justify-content: space-between;
     }
   }
 
