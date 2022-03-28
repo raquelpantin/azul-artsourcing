@@ -12,7 +12,9 @@ function HomePage() {
           <Link to={"/about"}>
             <button className="home__hero-btn1">Learn More</button>
           </Link>
-          <button className="home__hero-btn2">Get Started</button>
+          <Link to={"/signup"}>
+            <button className="home__hero-btn2">Get Started</button>
+          </Link>
         </div>
       </div>
       <h2 className="featured-title">Featured</h2>
