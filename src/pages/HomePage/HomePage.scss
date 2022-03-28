@@ -83,3 +83,17 @@
     }
   }
 }
+
+.featured-title {
+  font-family: $main;
+  color: $text;
+  font-size: toRem(18);
+  font-weight: 600;
+  margin-left: toRem(16);
+  margin-top: toRem(16);
+  margin-bottom: toRem(8);
+}
+
+.featured-slider {
+  margin-bottom: 3rem;
+}

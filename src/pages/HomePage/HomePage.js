@@ -1,6 +1,5 @@
 import "./HomePage.scss";
 import Featured from "../../components/Featured/Featured";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 function HomePage() {
@@ -16,7 +15,10 @@ function HomePage() {
           <button className="home__hero-btn2">Get Started</button>
         </div>
       </div>
-      <Featured />
+      <h2 className="featured-title">Featured</h2>
+      <div className="featured-slider">
+        <Featured />
+      </div>
     </div>
   );
 }
