@@ -12,6 +12,9 @@
   padding-right: toRem(16);
   padding-top: toRem(8);
   border-top: 4px solid $footerborder;
+  @include tablet {
+    padding-left: toRem(36);
+  }
 
   &__container {
     display: flex;
@@ -27,11 +30,19 @@
     font-size: toRem(8);
     font-weight: $bold;
     margin-bottom: toRem(8);
+    @include tablet {
+      font-size: toRem(12);
+      padding-top: toRem(8);
+    }
   }
 
   &__logo {
     font-family: $logo;
     font-size: toRem(12);
+    @include tablet {
+      font-size: toRem(24);
+      margin-right: toRem(175);
+    }
   }
 
   &__container-bottom {
@@ -39,10 +50,16 @@
     flex-direction: row;
     align-items: center;
     padding-top: toRem(8);
+    @include tablet {
+      padding-bottom: toRem(8);
+    }
   }
 
   &__footnote {
     font-size: toRem(9);
     margin-left: toRem(32);
+    @include tablet {
+      font-size: toRem(11);
+    }
   }
 }

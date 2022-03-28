@@ -45,6 +45,9 @@
     font-weight: $bold;
     filter: $dropshadow;
     margin-top: 1rem;
+    @include tablet {
+      font-size: toRem(62);
+    }
   }
 
   &__hero-text {
@@ -53,6 +56,10 @@
     font-size: toRem(18);
     margin-left: toRem(120);
     margin-bottom: toRem(16);
+    @include tablet {
+      font-size: toRem(28);
+      margin-left: 12rem;
+    }
   }
 
   &__hero-btn1 {
@@ -66,6 +73,9 @@
     margin-left: toRem(16);
     &:hover {
       @include slideAnimation;
+    }
+    @include tablet {
+      margin-left: toRem(160);
     }
   }
 
@@ -92,6 +102,11 @@
   margin-left: toRem(16);
   margin-top: toRem(16);
   margin-bottom: toRem(8);
+  @include tablet {
+    font-size: toRem(28);
+    margin-bottom: toRem(16);
+    margin-left: toRem(36);
+  }
 }
 
 .featured-slider {

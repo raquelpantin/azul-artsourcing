@@ -33,6 +33,13 @@
   color: $white;
   font-family: $logo;
   margin-right: 0.5rem;
+  @include tablet {
+    font-size: toRem(32);
+  }
+}
+
+.navbar__logo-link {
+  text-decoration: none;
 }
 
 .homelink,

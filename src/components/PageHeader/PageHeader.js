@@ -11,7 +11,9 @@ const PageHeader = () => {
   return (
     <div>
       <nav className="navbar">
-        <h1 className="navbar__logo">AZUL</h1>
+        <Link to="/" className="navbar__logo-link">
+          <h1 className="navbar__logo">AZUL</h1>
+        </Link>
         <div className="navbar__searchbar">
           <input
             className="navbar__search-input"
