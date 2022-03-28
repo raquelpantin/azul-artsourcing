@@ -1,0 +1,83 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.search-results {
+  margin-top: toRem(12);
+}
+.search-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-start;
+  border-bottom: 3px solid $heroborder;
+
+  justify-content: center;
+}
+
+.search-pfp-container {
+  width: auto;
+  padding-right: toRem(8);
+  //   height: 100%;
+}
+
+.search-pfp {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border: 2px solid $header;
+}
+
+.search-artist-info {
+  display: flex;
+  flex-direction: column;
+  color: $text;
+}
+
+.search-name {
+  font-size: toRem(18);
+  font-weight: $semibold;
+  padding-bottom: 0.1rem;
+}
+
+.search-location {
+  font-size: toRem(13);
+  padding-bottom: 0.1rem;
+}
+
+.search-skill {
+  font-size: toRem(11);
+}
+
+.search-skill-results {
+  color: $skillblue;
+  border: 1px solid $heroborder;
+  border-radius: 10px;
+  padding: toRem(3);
+  margin-left: 0.25rem;
+  background-color: $tagfill;
+}
+
+.search-info-right {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: 0.3rem;
+  align-items: flex-end;
+}
+
+.search-price {
+  color: $text;
+  font-size: toRem(10);
+}
+
+.search-open {
+  filter: invert(19%) sepia(96%) saturate(2367%) hue-rotate(187deg)
+    brightness(94%) contrast(102%);
+  height: 2rem;
+  margin-top: 0.2rem;
+}

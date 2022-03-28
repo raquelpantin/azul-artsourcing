@@ -1,0 +1,33 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.welcome__hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+    url("../../assets/images/loginhero.jpg");
+  height: 4.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: toRem(16);
+}
+
+.welcome__text-container {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome__text {
+  color: $white;
+  font-size: toRem(28);
+  font-weight: $semibold;
+  filter: $dropshadow;
+}
