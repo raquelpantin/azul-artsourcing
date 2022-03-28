@@ -7,21 +7,36 @@
 
 .search-results {
   margin-top: toRem(12);
+  margin-bottom: toRem(16);
 }
 .search-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: auto;
+  margin: 0 toRem(4);
+  padding-bottom: 0.25rem;
   align-items: flex-start;
   border-bottom: 3px solid $heroborder;
-
   justify-content: center;
+  @include tablet {
+    margin: 0 toRem(32);
+    width: auto;
+  }
+  @include desktop {
+    padding-bottom: 0.5rem;
+    margin: 0 toRem(48);
+  }
 }
 
 .search-pfp-container {
   width: auto;
   padding-right: toRem(8);
-  //   height: 100%;
+  @include tablet {
+    padding-right: toRem(12);
+  }
+  @include desktop {
+    padding-right: toRem(16);
+  }
 }
 
 .search-pfp {
@@ -30,6 +45,14 @@
   height: 4rem;
   object-fit: cover;
   border: 2px solid $header;
+  @include tablet {
+    width: 5.25rem;
+    height: 5.25rem;
+  }
+  @include desktop {
+    width: 7rem;
+    height: 7rem;
+  }
 }
 
 .search-artist-info {
@@ -42,15 +65,29 @@
   font-size: toRem(18);
   font-weight: $semibold;
   padding-bottom: 0.1rem;
+  @include tablet {
+    font-size: toRem(24);
+    padding-bottom: toRem(5);
+  }
+  @include desktop {
+    font-size: toRem(26);
+  }
 }
 
 .search-location {
   font-size: toRem(13);
   padding-bottom: 0.1rem;
+  @include tablet {
+    font-size: toRem(16);
+    padding-bottom: toRem(4);
+  }
 }
 
 .search-skill {
   font-size: toRem(11);
+  @include tablet {
+    font-size: toRem(14);
+  }
 }
 
 .search-skill-results {
@@ -65,14 +102,22 @@
 .search-info-right {
   display: flex;
   flex-direction: column;
-
   padding-top: 0.3rem;
   align-items: flex-end;
+  @include tablet {
+    margin-left: toRem(32);
+  }
+  @include desktop {
+    margin-left: toRem(70);
+  }
 }
 
 .search-price {
   color: $text;
   font-size: toRem(10);
+  @include tablet {
+    font-size: toRem(12);
+  }
 }
 
 .search-open {
@@ -80,4 +125,11 @@
     brightness(94%) contrast(102%);
   height: 2rem;
   margin-top: 0.2rem;
+  @include tablet {
+    height: 2.75rem;
+    margin-top: toRem(8);
+  }
+  @include desktop {
+    height: 3rem;
+  }
 }
