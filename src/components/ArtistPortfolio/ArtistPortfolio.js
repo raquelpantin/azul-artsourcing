@@ -20,7 +20,8 @@ function ArtistPortfolio() {
         <h3 className="portfolio-header">Portfolio</h3>
       </div>
       <Swiper
-        spaceBetween={25}
+        className="portfolio-swiper"
+        spaceBetween={0}
         slidesPerView={2}
         navigation
         loop={true}
@@ -29,8 +30,8 @@ function ArtistPortfolio() {
         onSwiper={(swiper) => console.log(swiper)}
         breakpoints={{
           400: {
-            slidesPerView: 2,
-            spaceBetween: 15,
+            slidesPerView: 3,
+            spaceBetween: 5,
           },
           635: {
             slidesPerView: 3,

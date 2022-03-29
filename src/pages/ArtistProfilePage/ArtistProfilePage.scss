@@ -8,7 +8,6 @@
 .artist-profile {
   display: flex;
   flex-direction: column;
-
   position: relative;
 
   &__container-all {
@@ -17,6 +16,9 @@
     flex-direction: column;
     position: absolute;
     top: 1.75rem;
+    @include tablet {
+      margin: 0 toRem(32);
+    }
   }
 
   &__back {
@@ -25,12 +27,19 @@
 
   &__back-icon {
     width: 2rem;
+
+    @include tablet {
+      width: 3rem;
+    }
+
+    &:hover {
+      @include slideAnimation;
+    }
   }
 
   &__container-top {
     display: flex;
     flex-direction: row;
-
     margin-top: toRem(8);
   }
 
@@ -40,6 +49,11 @@
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid $bg;
+    @include tablet {
+      width: 10rem;
+      height: 10rem;
+      border: 6px solid $bg;
+    }
   }
 
   &__details {
@@ -47,18 +61,29 @@
     flex-direction: column;
     justify-content: center;
     margin-bottom: 1rem;
+    @include tablet {
+      margin-top: 0.25rem;
+      margin-left: 0.5rem;
+    }
   }
 
   &__name {
     color: $white;
     font-size: toRem(32);
     font-weight: $semibold;
+    @include tablet {
+      font-size: toRem(42);
+      margin-bottom: 0.25rem;
+    }
   }
 
   &__location {
     color: $white;
     font-size: toRem(14);
     font-weight: $semibold;
+    @include tablet {
+      font-size: toRem(20);
+    }
   }
 
   &__container-details {
@@ -75,6 +100,10 @@
     border: 1px solid $heroborder;
     border-radius: 6px;
     padding: toRem(4) toRem(16);
+    @include tablet {
+      padding: toRem(10) toRem(28);
+      margin-top: toRem(4);
+    }
   }
 
   &__message-text {
@@ -82,6 +111,9 @@
     margin-left: 0.5rem;
     font-size: toRem(15);
     font-weight: $semibold;
+    @include tablet {
+      font-size: toRem(20);
+    }
   }
 
   &__container-bottom {
@@ -95,15 +127,27 @@
     padding-bottom: toRem(8);
     padding-top: toRem(8);
     color: $text;
+    @include tablet {
+      font-size: toRem(24);
+      margin-top: 5rem;
+      padding-top: toRem(18);
+      padding-bottom: toRem(18);
+    }
   }
 
   &__about-header {
     font-weight: $semibold;
+    @include tablet {
+      padding-bottom: toRem(8);
+    }
   }
 
   &__about-text {
     margin-top: toRem(4);
     font-size: toRem(12);
+    @include tablet {
+      font-size: toRem(16);
+    }
   }
 
   &__skill {
@@ -115,6 +159,11 @@
 
   &__skill-header {
     font-weight: $semibold;
+    @include tablet {
+      font-size: toRem(24);
+      padding-top: toRem(8);
+      padding-bottom: toRem(8);
+    }
   }
 
   &__skill-card {
@@ -122,6 +171,9 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: toRem(4);
+    @include tablet {
+      padding-bottom: toRem(8);
+    }
   }
 
   &__skill-btns {
@@ -133,5 +185,9 @@
     margin-right: toRem(6);
     background-color: $tagfill;
     font-size: toRem(12);
+    @include tablet {
+      font-size: toRem(16);
+      margin-right: toRem(12);
+    }
   }
 }

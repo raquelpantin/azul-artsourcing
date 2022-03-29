@@ -13,6 +13,14 @@
 
 .portfolio-header {
   font-weight: $semibold;
+  @include tablet {
+    font-size: toRem(24);
+    padding-top: toRem(8);
+  }
+}
+
+.portfolio-swiper {
+  margin-bottom: toRem(32);
 }
 
 .portfolio-card {
@@ -37,6 +45,9 @@
   overflow: hidden;
   cursor: pointer;
   position: relative;
+  @include tablet {
+    min-height: 50vh;
+  }
   @include desktop {
     min-height: 65vh;
   }

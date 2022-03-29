@@ -15,7 +15,7 @@
   position: relative;
   margin-top: toRem(16);
   @include tablet {
-    height: 8rem;
+    height: 10rem;
     background-position: bottom, left;
   }
   @include desktop {
