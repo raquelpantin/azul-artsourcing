@@ -1,0 +1,137 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.artist-profile {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  &__container-all {
+    margin: 0 toRem(16);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1.75rem;
+  }
+
+  &__back {
+    width: 100%;
+  }
+
+  &__back-icon {
+    width: 2rem;
+  }
+
+  &__container-top {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: toRem(8);
+  }
+
+  &__pfp-image {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid $bg;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  &__name {
+    color: $white;
+    font-size: toRem(32);
+    font-weight: $semibold;
+  }
+
+  &__location {
+    color: $white;
+    font-size: toRem(14);
+    font-weight: $semibold;
+  }
+
+  &__container-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: toRem(8);
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $heroborder;
+    border-radius: 6px;
+    padding: toRem(4) toRem(16);
+  }
+
+  &__message-text {
+    color: $header;
+    margin-left: 0.5rem;
+    font-size: toRem(15);
+    font-weight: $semibold;
+  }
+
+  &__container-bottom {
+    @include layout;
+  }
+
+  &__about {
+    margin-top: 4rem;
+    border-bottom: 2px solid $heroborder;
+    border-top: 2px solid $heroborder;
+    padding-bottom: toRem(8);
+    padding-top: toRem(8);
+    color: $text;
+  }
+
+  &__about-header {
+    font-weight: $semibold;
+  }
+
+  &__about-text {
+    margin-top: toRem(4);
+    font-size: toRem(12);
+  }
+
+  &__skill {
+    border-bottom: 2px solid $heroborder;
+    padding-bottom: toRem(8);
+    padding-top: toRem(8);
+    color: $text;
+  }
+
+  &__skill-header {
+    font-weight: $semibold;
+  }
+
+  &__skill-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: toRem(4);
+  }
+
+  &__skill-btns {
+    color: $skillblue;
+    border: 1px solid $heroborder;
+    border-radius: 10px;
+    padding: toRem(3);
+    margin-bottom: toRem(4);
+    margin-right: toRem(6);
+    background-color: $tagfill;
+    font-size: toRem(12);
+  }
+}

@@ -1,0 +1,25 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+    url("../../assets/images/loginhero.jpg");
+  height: 7rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: toRem(16);
+  @include tablet {
+    height: 8rem;
+    background-position: bottom, left;
+  }
+  @include desktop {
+    height: 10rem;
+    background-position: top;
+  }
+}
