@@ -46,10 +46,10 @@
   cursor: pointer;
   position: relative;
   @include tablet {
-    min-height: 50vh;
+    min-height: 40vh;
   }
   @include desktop {
-    min-height: 65vh;
+    min-height: 30vh;
   }
   .portfolio-card-image {
     position: absolute;

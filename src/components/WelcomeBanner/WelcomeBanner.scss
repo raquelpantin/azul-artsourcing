@@ -8,12 +8,15 @@
 .welcome__hero {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
     url("../../assets/images/loginhero.jpg");
-  height: 4.5rem;
+  height: 7rem;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   margin-top: toRem(16);
+  @include desktop {
+    height: 10rem;
+  }
 }
 
 .welcome__text-container {
@@ -30,4 +33,10 @@
   font-size: toRem(28);
   font-weight: $semibold;
   filter: $dropshadow;
+  @include tablet {
+    font-size: toRem(32);
+  }
+  @include desktop {
+    font-size: toRem(42);
+  }
 }
