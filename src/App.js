@@ -20,7 +20,7 @@ function App() {
           {/* <ArtistProfilePage /> */}
           <Routes>
             <Route path="/" exact element={<HomePage />} />
-            <Route path="/user" exact element={<UserHomePage />} />
+            <Route path="/user" element={<UserHomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/:search" element={<SearchResultsPage />} />

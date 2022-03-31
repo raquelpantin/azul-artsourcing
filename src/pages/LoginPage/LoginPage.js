@@ -1,11 +1,26 @@
 import "./LoginPage.scss";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  TextField,
+  InputAdornment,
+  IconButton,
+  OutlinedInput,
+  FormControl,
+  InputLabel,
+  Button,
+} from "@mui/material";
+
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const navigate = useNavigate();
 
   async function loginUser(event) {
     event.preventDefault();
@@ -22,8 +37,9 @@ function LoginPage() {
     const data = await response.json();
 
     if (data.token) {
-      alert("Login Successufl");
-      window.location.href = "/user";
+      localStorage.setItem("token", data.token);
+      alert("Login Successful");
+      navigate("/user");
     } else {
       alert("Please check your username and password");
     }
@@ -34,7 +50,45 @@ function LoginPage() {
     <div className="form-container__login">
       <form className="login-form" onSubmit={loginUser}>
         <h1 className="login__header">Login</h1>
-        <label className="login__label" htmlFor="email">
+        <div className="login__field">
+          <TextField
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="login__input"
+            type="text"
+            name="email"
+            variant="outlined"
+            size="small"
+            label="Email"
+          />
+        </div>
+
+        <div className="login__field">
+          <FormControl
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            variant="outlined"
+            size="small"
+            className="signup__input"
+          >
+            <InputLabel>Password</InputLabel>
+            <OutlinedInput
+              label="Password"
+              type={showPassword ? "text" : "password"}
+              endAdornment={
+                <InputAdornment>
+                  <IconButton
+                    edge="end"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  </IconButton>
+                </InputAdornment>
+              }
+            />
+          </FormControl>
+        </div>
+        {/* <label className="login__label" htmlFor="email">
           EMAIL
         </label>
         <input
@@ -53,7 +107,7 @@ function LoginPage() {
           className="login__input"
           type="password"
           name="password"
-        ></input>
+        ></input> */}
         <button className="login__button" type="submit">
           LOGIN
         </button>

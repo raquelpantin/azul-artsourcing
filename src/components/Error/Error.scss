@@ -1,0 +1,20 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.error {
+  color: #e03c31;
+  display: flex;
+  align-items: center;
+  font-size: toRem(10);
+  margin-bottom: 1rem;
+}
+
+.error-icon {
+  height: 1.2rem;
+  width: 1.2rem;
+  padding-right: 0.25rem;
+}

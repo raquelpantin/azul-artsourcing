@@ -1,9 +1,23 @@
 import "./UserHomePage.scss";
 import Featured from "../../components/Featured/Featured";
 import WelcomeBanner from "../../components/WelcomeBanner/WelcomeBanner";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import jwtDecode from "jwt-decode";
 
 function UserHomePage() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      const user = jwtDecode(token);
+      if (!user) {
+        localStorage.removeItem("token");
+        navigate("/login");
+      }
+    }
+  }, []);
   return (
     <>
       <WelcomeBanner />

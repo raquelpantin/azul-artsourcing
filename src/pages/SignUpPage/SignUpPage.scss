@@ -16,6 +16,9 @@
     margin: toRem(32) auto;
   }
 }
+.signup__field {
+  margin-bottom: 1rem;
+}
 
 .signup-form {
   display: flex;
@@ -83,4 +86,21 @@
     height: toRem(42);
     font-size: toRem(16);
   }
+}
+
+.signup__error {
+  color: #e03c31;
+  font-size: 9px;
+}
+
+.signup__success {
+  color: green;
+  font-size: 9px;
+}
+
+.signup__password-check {
+  margin-top: 0.5rem;
+  padding-left: 0.25rem;
+  font-size: 9px;
+  color: #e03c31;
 }
