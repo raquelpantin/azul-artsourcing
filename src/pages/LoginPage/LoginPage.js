@@ -37,7 +37,7 @@ function LoginPage() {
     const data = await response.json();
 
     if (data.token) {
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", data.firstName);
       alert("Login Successful");
       navigate("/user");
     } else {

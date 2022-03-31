@@ -28,6 +28,8 @@ function SignUpPage() {
   let passwordNum = /(.*[0-9].*)/.test(password);
   let passwordSpecialChar = /(.*[^a-zA-Z0-9].*)/.test(password);
 
+  let emailCheck = /\S+@\S+\.\S+/.test(email);
+
   const navigate = useNavigate();
 
   async function registerUser(event) {
@@ -103,6 +105,17 @@ function SignUpPage() {
           <FormHelperText className="signup__error-container">
             {!email && <span className="signup__error">* Required Field</span>}
           </FormHelperText>
+          {email && (
+            <div className="signup__password-check">
+              <div>
+                <small
+                  className={emailCheck ? "signup__success" : "signup__error"}
+                >
+                  must be in format example@mail.com
+                </small>
+              </div>
+            </div>
+          )}
         </div>
         {/* <div className="signup__field">
           <TextField
