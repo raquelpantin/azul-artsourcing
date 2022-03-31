@@ -1,13 +1,10 @@
 import "./AboutPage.scss";
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import image1 from "../../assets/images/about2.jpg";
 import image2 from "../../assets/images/about1.jpg";
 import { motion } from "framer-motion";
 
 function AboutPage() {
-  const navigate = useNavigate();
-
   return (
     <div className="about-page">
       <motion.div

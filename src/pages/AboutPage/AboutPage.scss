@@ -9,11 +9,16 @@
   display: flex;
   flex-direction: column;
   width: auto;
-
   @include layout;
   color: $text;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  @include tablet {
+    margin-top: 2rem;
+  }
+  @include desktop {
+    margin-top: 3.5rem;
+  }
 }
 
 .about-container {
@@ -23,6 +28,9 @@
   justify-content: center;
   width: 100%;
   margin-bottom: 2rem;
+  @include desktop {
+    margin-bottom: 4rem;
+  }
 }
 
 .about-image {
@@ -30,6 +38,12 @@
   height: auto;
   border-radius: 6px;
   border: 3px solid $heroborder;
+  @include tablet {
+    width: 20rem;
+  }
+  @include desktop {
+    width: 30rem;
+  }
 }
 
 .about-texttop {
@@ -37,6 +51,17 @@
   width: 40%;
   line-height: 1.5rem;
   margin-left: 1rem;
+  @include tablet {
+    font-size: toRem(24);
+    line-height: 2.5rem;
+    border-top: solid 2px $btnfill;
+    border-bottom: solid 2px $btnfill;
+    padding: toRem(12) 0;
+    margin-left: 2rem;
+  }
+  @include desktop {
+    margin-right: toRem(60);
+  }
 }
 
 .about-textbottom {
@@ -44,6 +69,14 @@
   width: 40%;
   line-height: 1.5rem;
   margin-right: 1rem;
+  @include tablet {
+    font-size: toRem(24);
+    line-height: 2.5rem;
+    border-top: solid 2px $btnfill;
+    border-bottom: solid 2px $btnfill;
+    padding: toRem(12) 0;
+    margin-right: 2rem;
+  }
 }
 
 .about-cta__header {
@@ -51,6 +84,9 @@
   font-weight: $semibold;
   font-size: toRem(22);
   text-align: center;
+  @include tablet {
+    font-size: toRem(32);
+  }
 }
 
 .about-cta__text {
@@ -58,6 +94,9 @@
   text-align: center;
   padding-top: 0.5rem;
   margin-bottom: 4rem;
+  @include tablet {
+    font-size: toRem(18);
+  }
 }
 
 .about-cta__link {
