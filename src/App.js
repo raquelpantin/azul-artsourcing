@@ -2,11 +2,11 @@ import "./App.scss";
 import PageHeader from "./components/PageHeader/PageHeader";
 import PageFooter from "./components/PageFooter/PageFooter";
 import HomePage from "./pages/HomePage/HomePage";
-import UserHomePage from "./pages/UserHomePage/UserHomePage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import ArtistProfilePage from "./pages/ArtistProfilePage/ArtistProfilePage";
 import SearchResultsPage from "./pages/SearchResultsPage/SearchResultsPage";
+import Private from "./pages/PrivateRoute/PrivateRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,11 +20,24 @@ function App() {
           {/* <ArtistProfilePage /> */}
           <Routes>
             <Route path="/" exact element={<HomePage />} />
-            <Route path="/user" element={<UserHomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/:search" element={<SearchResultsPage />} />
-            <Route path="/profile/:id" element={<ArtistProfilePage />} />
+            <Route
+              path="/:search"
+              element={
+                <Private Private={SearchResultsPage}>
+                  {/* <SearchResultsPage /> */}
+                </Private>
+              }
+            />
+            <Route
+              path="/profile/:id"
+              element={
+                <Private Private={ArtistProfilePage}>
+                  {/* <ArtistProfilePage /> */}
+                </Private>
+              }
+            />
           </Routes>
         </main>
         <footer>

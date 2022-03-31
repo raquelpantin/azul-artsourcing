@@ -1,5 +1,5 @@
 import "./PageHeader.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import menu from "../../assets/icons/menu_white_24dp.svg";
 import close from "../../assets/icons/close_white_24dp.svg";
@@ -7,6 +7,13 @@ import search from "../../assets/icons/search_black_24dp.svg";
 
 const PageHeader = () => {
   const [isMobile, setIsMobile] = useState(false);
+
+  const navigate = useNavigate();
+
+  function logout() {
+    localStorage.clear();
+    navigate("/");
+  }
 
   return (
     <div>
@@ -35,9 +42,15 @@ const PageHeader = () => {
           <Link to="/contact" className="contact">
             <li>CONTACT</li>
           </Link>
-          <Link to="/login" className="login">
-            <li>LOGIN</li>
-          </Link>
+          {localStorage.getItem("user") ? (
+            <Link to="/" className="login" onClick={logout}>
+              <li>LOGOUT</li>
+            </Link>
+          ) : (
+            <Link to="/login" className="login">
+              <li>LOGIN</li>
+            </Link>
+          )}
         </ul>
 
         <Link className="icons" to="#" onClick={() => setIsMobile(!isMobile)}>
@@ -61,9 +74,15 @@ const PageHeader = () => {
           <li>CONTACT</li>
         </Link>
         <div className="navbar__divider"></div>
-        <Link to="/login" className="login">
-          <li>LOGIN</li>
-        </Link>
+        {localStorage.getItem("user") ? (
+          <Link to="/" className="login" onClick={logout}>
+            <li>LOGOUT</li>
+          </Link>
+        ) : (
+          <Link to="/login" className="login">
+            <li>LOGIN</li>
+          </Link>
+        )}
       </ul>
     </div>
   );
