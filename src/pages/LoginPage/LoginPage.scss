@@ -70,6 +70,7 @@
   @include tablet {
     height: toRem(38);
     margin-bottom: toRem(16);
+    width: 100%;
   }
   &:focus {
     border: 1px solid $header;

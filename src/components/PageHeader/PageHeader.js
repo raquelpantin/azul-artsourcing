@@ -16,7 +16,7 @@ const PageHeader = () => {
   }
 
   return (
-    <div>
+    <div className="navbar-position">
       <nav className="navbar">
         <Link to="/" className="navbar__logo-link">
           <h1 className="navbar__logo">AZUL</h1>

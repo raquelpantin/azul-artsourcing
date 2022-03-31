@@ -1,0 +1,71 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  @include layout;
+  color: $text;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.about-image {
+  width: 10rem;
+  height: auto;
+  border-radius: 6px;
+  border: 3px solid $heroborder;
+}
+
+.about-texttop {
+  font-size: toRem(13);
+  width: 40%;
+  line-height: 1.5rem;
+  margin-left: 1rem;
+}
+
+.about-textbottom {
+  font-size: toRem(13);
+  width: 40%;
+  line-height: 1.5rem;
+  margin-right: 1rem;
+}
+
+.about-cta__header {
+  color: $card;
+  font-weight: $semibold;
+  font-size: toRem(22);
+  text-align: center;
+}
+
+.about-cta__text {
+  font-size: toRem(14);
+  text-align: center;
+  padding-top: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.about-cta__link {
+  text-decoration: none;
+}
+
+.about-cta__link-text {
+  color: $header;
+  font-weight: $bold;
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -6,6 +6,7 @@ import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import ArtistProfilePage from "./pages/ArtistProfilePage/ArtistProfilePage";
 import SearchResultsPage from "./pages/SearchResultsPage/SearchResultsPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
 import Private from "./pages/PrivateRoute/PrivateRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" exact element={<HomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route
               path="/:search"
               element={
