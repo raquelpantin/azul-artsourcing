@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import ArtistProfilePage from "./pages/ArtistProfilePage/ArtistProfilePage";
 import SearchResultsPage from "./pages/SearchResultsPage/SearchResultsPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import ContactPage from "./pages/ContactPage/ContactPage";
 import Private from "./pages/PrivateRoute/PrivateRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/signup" element={<SignUpPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route
               path="/:search"
               element={

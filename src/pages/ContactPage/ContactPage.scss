@@ -1,0 +1,109 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.contact-container {
+  background-color: $white;
+  border-radius: 6px;
+  width: 16rem;
+  margin: toRem(52) auto;
+
+  @include tablet {
+    width: 26.2rem;
+    display: flex;
+    margin: toRem(32) auto;
+  }
+}
+.contact__field {
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-left: toRem(32);
+  padding-right: toRem(32);
+  border: 1px solid $heroborder;
+  border-radius: 6px;
+  @include tablet {
+    width: 26.2rem;
+  }
+}
+
+.contact__header {
+  font-size: toRem(16);
+  font-weight: $semibold;
+  padding-top: toRem(24);
+  padding-bottom: toRem(20);
+  color: $text;
+  text-align: center;
+  @include tablet {
+    font-size: toRem(20);
+    padding-top: toRem(28);
+    padding-bottom: toRem(24);
+  }
+}
+
+.contact__label {
+  color: $label;
+  font-size: toRem(11);
+  font-weight: $semibold;
+  padding-bottom: toRem(3);
+  @include tablet {
+    font-size: toRem(12);
+  }
+}
+
+.contact__input {
+  height: toRem(34);
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  border: 1px solid $heroborder;
+  margin-bottom: toRem(12);
+  @include tablet {
+    height: toRem(38);
+    margin-bottom: toRem(16);
+    width: 100%;
+  }
+  &:focus {
+    border: 1px solid $header;
+    outline: none;
+  }
+}
+
+.contact__button {
+  background-color: $btnfill;
+  color: $skillblue;
+  font-size: toRem(14);
+  font-weight: $semibold;
+  padding: toRem(10) 0;
+  border: solid 1px $heroborder;
+  border-radius: 4px;
+  margin: toRem(88) 0 toRem(24);
+  @include tablet {
+    height: toRem(42);
+    font-size: toRem(16);
+  }
+}
+
+.contact__error {
+  color: #e03c31;
+  font-size: 9px;
+}
+
+.contact__success {
+  color: green;
+  font-size: 9px;
+}
+
+.contact__email-check {
+  margin-top: 0.5rem;
+  padding-left: 0.25rem;
+  font-size: 9px;
+  color: #e03c31;
+}
