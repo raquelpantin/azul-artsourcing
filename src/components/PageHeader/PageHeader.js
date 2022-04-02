@@ -10,21 +10,19 @@ const PageHeader = (props) => {
   const [term, setTerm] = useState(props.term || "");
 
   const navigate = useNavigate();
-  // const searchInputRef = useRef(null);
-
-  // const searchBar = (event) => {
-  //   event.preventDefault();
-  //   const searchInput = searchInputRef.current.value;
-
-  //   if (!searchInput) return;
-
-  //   navigate(`/search?q=${searchInput}`);
-  // };
 
   const searchSubmit = (event) => {
     event.preventDefault();
+    if (term === "") {
+      return;
+    }
+    const urlEncodedTerm = encodeURI(term);
     console.log(term);
-    navigate(`/search?q=${term}`);
+    navigate({
+      pathname: "/search",
+      search: `?q=${urlEncodedTerm}`,
+    });
+    // navigate(`/search?q=${urlEncodedTerm}`);
   };
 
   function logout() {
@@ -43,8 +41,8 @@ const PageHeader = (props) => {
             className="navbar__search-input"
             type="text"
             placeholder="Search..."
+            value={term}
             onChange={(e) => setTerm(e.target.value)}
-            // ref={searchInputRef}
           ></input>
           <img className="navbar__search-icon" src={search} alt="search icon" />
         </form>

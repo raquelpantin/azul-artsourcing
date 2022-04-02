@@ -35,7 +35,7 @@ function App() {
               }
             />
             <Route
-              path="/profile/:id"
+              path="/artist/:id"
               element={
                 <Private Private={ArtistProfilePage}>
                   {/* <ArtistProfilePage /> */}
