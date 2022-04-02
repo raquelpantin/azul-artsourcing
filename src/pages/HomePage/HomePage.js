@@ -1,9 +1,11 @@
 import "./HomePage.scss";
 import Featured from "../../components/Featured/Featured";
 import WelcomeBanner from "../../components/WelcomeBanner/WelcomeBanner";
+import SearchResultsPage from "../SearchResultsPage/SearchResultsPage";
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import jwtDecode from "jwt-decode";
+import axios from "axios";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -37,6 +39,7 @@ function HomePage() {
           </div>
         </div>
       )}
+
       <h2 className="featured-title">Featured</h2>
       <div className="featured-slider">
         <Featured />

@@ -1,14 +1,31 @@
 import "./PageHeader.scss";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import menu from "../../assets/icons/menu_white_24dp.svg";
 import close from "../../assets/icons/close_white_24dp.svg";
 import search from "../../assets/icons/search_black_24dp.svg";
 
-const PageHeader = () => {
+const PageHeader = (props) => {
   const [isMobile, setIsMobile] = useState(false);
+  const [term, setTerm] = useState(props.term || "");
 
   const navigate = useNavigate();
+  // const searchInputRef = useRef(null);
+
+  // const searchBar = (event) => {
+  //   event.preventDefault();
+  //   const searchInput = searchInputRef.current.value;
+
+  //   if (!searchInput) return;
+
+  //   navigate(`/search?q=${searchInput}`);
+  // };
+
+  const searchSubmit = (event) => {
+    event.preventDefault();
+    console.log(term);
+    navigate(`/search?q=${term}`);
+  };
 
   function logout() {
     localStorage.clear();
@@ -21,14 +38,16 @@ const PageHeader = () => {
         <Link to="/" className="navbar__logo-link">
           <h1 className="navbar__logo">AZUL</h1>
         </Link>
-        <div className="navbar__searchbar">
+        <form className="navbar__searchbar" onSubmit={searchSubmit}>
           <input
             className="navbar__search-input"
             type="text"
             placeholder="Search..."
+            onChange={(e) => setTerm(e.target.value)}
+            // ref={searchInputRef}
           ></input>
           <img className="navbar__search-icon" src={search} alt="search icon" />
-        </div>
+        </form>
         <ul
           className={isMobile ? "nav-links-mobile" : "nav-links"}
           onClick={() => setIsMobile(false)}

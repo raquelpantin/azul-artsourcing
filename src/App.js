@@ -27,7 +27,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route
-              path="/:search"
+              path="/search"
               element={
                 <Private Private={SearchResultsPage}>
                   {/* <SearchResultsPage /> */}

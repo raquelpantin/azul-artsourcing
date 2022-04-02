@@ -27,6 +27,7 @@
 
   &__back-icon {
     width: 2rem;
+    cursor: pointer;
 
     @include tablet {
       width: 3rem;

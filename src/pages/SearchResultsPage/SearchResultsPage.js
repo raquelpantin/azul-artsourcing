@@ -1,13 +1,14 @@
 import "./SearchResultsPage.scss";
-import WelcomeBanner from "../../components/WelcomeBanner/WelcomeBanner";
 import { Link } from "react-router-dom";
+import react from "react";
 import open from "../../assets/icons/arrow_circle_right_black_24dp.svg";
 import artist from "../../assets/images/li-shanting-AGy0SxTzqr8-unsplash.jpg";
 
-function SearchResultsPage() {
+function SearchResultsPage({ results }) {
+  console.log(results);
   return (
     <>
-      <WelcomeBanner />
+      {/* STILL NEED TO MAP THROUGH */}
       <div className="search-results">
         <div className="search-container">
           <div className="search-pfp-container">
@@ -23,7 +24,7 @@ function SearchResultsPage() {
           </div>
           <div className="search-info-right">
             <p className="search-price">Price Range: $$</p>
-            <Link className="search-link" to="#">
+            <Link className="search-link" to="/profile/:id">
               <img className="search-open" src={open} />
             </Link>
           </div>

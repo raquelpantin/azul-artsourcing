@@ -2,11 +2,10 @@ import "./ContactPage.scss";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { TextField, InputAdornment, FormHelperText } from "@mui/material";
-
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
+import emailjs from "emailjs-com";
 
 function ContactPage() {
   const [name, setName] = useState("");
@@ -17,14 +16,30 @@ function ContactPage() {
 
   const navigate = useNavigate();
 
-  async function contact(event) {
+  async function sendEmail(event) {
     event.preventDefault();
-    navigate("/");
+
+    if (!name || !email || !message) {
+      alert("All fields must be filled");
+    } else {
+      emailjs
+        .sendForm(
+          "service_mo9zthu",
+          "template_x7qjoph",
+          event.target,
+          "fhAnQfKtqBLjy2Db3"
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
+      navigate("/");
+    }
   }
 
   return (
     <div className="contact-container">
-      <form className="contact-form" onSubmit={contact}>
+      <form className="contact-form" onSubmit={sendEmail}>
         <h1 className="contact__header">Contact Us</h1>
         <div className="contact__field">
           <TextField
@@ -85,6 +100,7 @@ function ContactPage() {
         <TextField
           id="outlined-multiline-static"
           label="Message"
+          name="message"
           multiline
           rows={3}
           value={message}

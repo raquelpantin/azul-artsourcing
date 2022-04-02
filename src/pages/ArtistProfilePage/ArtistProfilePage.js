@@ -1,5 +1,6 @@
 import "./ArtistProfilePage.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useRef } from "react";
 import artist from "../../assets/images/li-shanting-AGy0SxTzqr8-unsplash.jpg";
 import back from "../../assets/icons/arrow_back_white_24dp.svg";
 import mail from "../../assets/icons/mail_white_24dp.svg";
@@ -8,13 +9,19 @@ import Banner from "../../components/Banner/Banner";
 import ArtistPortfolio from "../../components/ArtistPortfolio/ArtistPortfolio";
 
 function ArtistProfilePage() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="artist-profile">
         <Banner />
         <div className="artist-profile__container-all">
           <div className="artist-profile__back">
-            <img className="artist-profile__back-icon" src={back} />
+            <img
+              className="artist-profile__back-icon"
+              src={back}
+              onClick={() => navigate(-1)}
+            />
           </div>
           <div className="artist-profile__container-top">
             <div className="artist-profile__pfp">
