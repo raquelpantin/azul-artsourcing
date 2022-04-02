@@ -40,36 +40,35 @@ function SearchResultsPage() {
   };
 
   return (
-    <>
+    <div className="search-all">
       {results.map((result) => {
         return (
-          <div className="search-results" key={result._id}>
-            <div className="search-container">
-              <div className="search-pfp-container">
-                <img className="search-pfp" src={result.avatar} />
-              </div>
-              <div className="search-artist-info">
-                <h3 className="search-name">
-                  {result.firstName} {result.lastName}
-                </h3>
-                <p className="search-location">
-                  {result.city}, {result.state}
-                </p>
-                <p className="search-skill">
-                  Skillset Includes:
-                  <span className="search-skill-results">
-                    {!test ? result.skills[0] : test}
-                  </span>
-                </p>
-              </div>
-              <div className="search-info-right">
-                <p className="search-price">Price Range: {result.pricRange}</p>
-                <Link className="search-link" to="/profile/:id">
-                  <img className="search-open" src={open} />
-                </Link>
+          <>
+            <div className="search-results" key={result._id}>
+              <div className="search-container">
+                <div className="search-pfp-container">
+                  <img className="search-pfp" src={result.avatar} />
+                </div>
+                <div className="search-artist-info">
+                  <h3 className="search-name">
+                    {result.firstName} {result.lastName}
+                  </h3>
+                  <p className="search-location">
+                    {result.city}, {result.state}
+                  </p>
+                </div>
+                <div className="search-info-right">
+                  <p className="search-price">
+                    Price Range: {result.pricRange}
+                  </p>
+                  <Link className="search-link" to="/profile/:id">
+                    <img className="search-open" src={open} />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+            <div className="border"></div>
+          </>
         );
       })}
       {/* <div className="search-results">
@@ -93,7 +92,7 @@ function SearchResultsPage() {
           </div>
         </div>
       </div> */}
-    </>
+    </div>
   );
 }
 
