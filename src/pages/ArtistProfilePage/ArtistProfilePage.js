@@ -19,8 +19,6 @@ function ArtistProfilePage() {
     axios
       .get(`http://localhost:7070/artist/${id}`)
       .then((response) => {
-        console.log(response.data);
-        console.log(response.data[0].city);
         setArtist(response.data[0]);
       })
       .catch((error) => console.log(error));
@@ -57,7 +55,9 @@ function ArtistProfilePage() {
               </div>
               <div className="artist-profile__message">
                 <img className="artist-profile__message-icon" src={chat} />
-                <p className="artist-profile__message-text">Message Jane</p>
+                <p className="artist-profile__message-text">
+                  Message {artist.firstName}
+                </p>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ function ArtistProfilePage() {
               <p className="artist-profile__skill-btns">pen & ink</p> */}
             </div>
           </div>
-          <ArtistPortfolio />
+          <ArtistPortfolio portfolio={artist.portfolio} />
         </div>
       </div>
     </>
