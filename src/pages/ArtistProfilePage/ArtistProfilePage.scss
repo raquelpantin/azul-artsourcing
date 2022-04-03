@@ -70,8 +70,9 @@
 
   &__name {
     color: $white;
-    font-size: toRem(32);
+    font-size: toRem(20);
     font-weight: $semibold;
+    padding-bottom: 0.25rem;
     @include tablet {
       font-size: toRem(42);
       margin-bottom: 0.25rem;
@@ -80,8 +81,9 @@
 
   &__location {
     color: $white;
-    font-size: toRem(14);
+    font-size: toRem(13);
     font-weight: $semibold;
+    margin-bottom: 0.5rem;
     @include tablet {
       font-size: toRem(20);
     }
@@ -101,6 +103,7 @@
     border: 1px solid $heroborder;
     border-radius: 6px;
     padding: toRem(4) toRem(16);
+    cursor: pointer;
     @include tablet {
       padding: toRem(10) toRem(28);
       margin-top: toRem(4);

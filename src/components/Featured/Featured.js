@@ -53,7 +53,7 @@ function Featured() {
           </div>
           <div className="details">
             <h2>
-              John Doe <span className="job-title">UI Developer</span>
+              John Doe <span className="job-title">Pen & Ink</span>
             </h2>
           </div>
         </div>
@@ -65,7 +65,7 @@ function Featured() {
           </div>
           <div className="details">
             <h2>
-              John Doe <span className="job-title">UI Developer</span>
+              Jeff Green <span className="job-title">Digital Art</span>
             </h2>
           </div>
         </div>
@@ -77,7 +77,8 @@ function Featured() {
           </div>
           <div className="details">
             <h2>
-              John Doe <span className="job-title">UI Developer</span>
+              Elizabeth Gaillard{" "}
+              <span className="job-title">Oil on Canvas</span>
             </h2>
           </div>
         </div>
@@ -89,7 +90,7 @@ function Featured() {
           </div>
           <div className="details">
             <h2>
-              John Doe <span className="job-title">UI Developer</span>
+              Juho Haataja <span className="job-title">Acyrlic on Canvas</span>
             </h2>
           </div>
         </div>
@@ -101,7 +102,7 @@ function Featured() {
           </div>
           <div className="details">
             <h2>
-              John Doe <span className="job-title">UI Developer</span>
+              Arthur Lawrence <span className="job-title">Digital Art</span>
             </h2>
           </div>
         </div>

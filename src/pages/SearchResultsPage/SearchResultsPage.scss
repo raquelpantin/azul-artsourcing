@@ -131,6 +131,7 @@
 .search-price {
   color: $text;
   font-size: toRem(9);
+  width: 100%;
   @include tablet {
     font-size: toRem(12);
   }

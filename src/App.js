@@ -19,7 +19,6 @@ function App() {
           <PageHeader />
         </header>
         <main>
-          {/* <ArtistProfilePage /> */}
           <Routes>
             <Route path="/" exact element={<HomePage />} />
             <Route path="/signup" element={<SignUpPage />} />
@@ -28,19 +27,11 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route
               path="/search"
-              element={
-                <Private Private={SearchResultsPage}>
-                  {/* <SearchResultsPage /> */}
-                </Private>
-              }
+              element={<Private Private={SearchResultsPage}></Private>}
             />
             <Route
               path="/artist/:id"
-              element={
-                <Private Private={ArtistProfilePage}>
-                  {/* <ArtistProfilePage /> */}
-                </Private>
-              }
+              element={<Private Private={ArtistProfilePage}></Private>}
             />
           </Routes>
         </main>

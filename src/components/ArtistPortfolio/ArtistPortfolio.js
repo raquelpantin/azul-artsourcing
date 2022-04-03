@@ -21,7 +21,7 @@ function ArtistPortfolio() {
       </div>
       <Swiper
         className="portfolio-swiper"
-        spaceBetween={0}
+        spaceBetween={20}
         slidesPerView={2}
         navigation
         loop={true}

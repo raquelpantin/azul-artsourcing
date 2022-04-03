@@ -1,6 +1,7 @@
 import "./ArtistProfilePage.scss";
-import { Link, useNavigate } from "react-router-dom";
-import React, { useRef } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import React, { useRef, useState, useEffect } from "react";
+import axios from "axios";
 import artist from "../../assets/images/li-shanting-AGy0SxTzqr8-unsplash.jpg";
 import back from "../../assets/icons/arrow_back_white_24dp.svg";
 import mail from "../../assets/icons/mail_white_24dp.svg";
@@ -9,7 +10,25 @@ import Banner from "../../components/Banner/Banner";
 import ArtistPortfolio from "../../components/ArtistPortfolio/ArtistPortfolio";
 
 function ArtistProfilePage() {
+  const [artist, setArtist] = useState({});
   const navigate = useNavigate();
+
+  const { id } = useParams();
+
+  const fetchDetails = () => {
+    axios
+      .get(`http://localhost:7070/artist/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        console.log(response.data[0].city);
+        setArtist(response.data[0]);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    fetchDetails();
+  }, []);
 
   return (
     <>
@@ -25,12 +44,16 @@ function ArtistProfilePage() {
           </div>
           <div className="artist-profile__container-top">
             <div className="artist-profile__pfp">
-              <img className="artist-profile__pfp-image" src={artist} />
+              <img className="artist-profile__pfp-image" src={artist.avatar} />
             </div>
             <div className="artist-profile__container-details">
               <div className="artist-profile__details">
-                <h2 className="artist-profile__name">Jane Doe</h2>
-                <p className="artist-profile__location">Miami, FL</p>
+                <h2 className="artist-profile__name">
+                  {artist.firstName} {artist.lastName}
+                </h2>
+                <p className="artist-profile__location">
+                  {artist.city}, {artist.state}
+                </p>
               </div>
               <div className="artist-profile__message">
                 <img className="artist-profile__message-icon" src={chat} />
@@ -42,19 +65,17 @@ function ArtistProfilePage() {
         <div className="artist-profile__container-bottom">
           <div className="artist-profile__about">
             <h3 className="artist-profile__about-header">About Me</h3>
-            <p className="artist-profile__about-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-              voluptatum laborum...
-            </p>
+            <p className="artist-profile__about-text">{artist.bio}</p>
           </div>
           <div className="artist-profile__skill">
             <h3 className="artist-profile__skill-header">Skillset</h3>
             <div className="artist-profile__skill-card">
-              <p className="artist-profile__skill-btns">photography</p>
-              <p className="artist-profile__skill-btns">oil painting</p>
+              {(artist.skills ?? []).map((data) => {
+                return <p className="artist-profile__skill-btns">{data}</p>;
+              })}
+              {/* <p className="artist-profile__skill-btns">oil painting</p>
               <p className="artist-profile__skill-btns">glass blowing</p>
-              <p className="artist-profile__skill-btns">pen & ink</p>
+              <p className="artist-profile__skill-btns">pen & ink</p> */}
             </div>
           </div>
           <ArtistPortfolio />

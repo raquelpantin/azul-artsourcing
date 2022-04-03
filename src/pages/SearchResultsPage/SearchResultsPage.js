@@ -24,11 +24,6 @@ function SearchResultsPage() {
   const test = searchParams.get("q");
 
   // Search();
-
-  useEffect(() => {
-    getSearch();
-  }, []);
-
   const getSearch = () => {
     axios
       .get("http://localhost:7070/artist")
@@ -38,6 +33,10 @@ function SearchResultsPage() {
       })
       .catch((error) => console.log(error));
   };
+
+  useEffect(() => {
+    getSearch();
+  }, []);
 
   return (
     <div className="search-all">
@@ -61,7 +60,7 @@ function SearchResultsPage() {
                   <p className="search-price">
                     Price Range: {result.pricRange}
                   </p>
-                  <Link className="search-link" to="/profile/:id">
+                  <Link className="search-link" to={`/artist/${result._id}`}>
                     <img className="search-open" src={open} />
                   </Link>
                 </div>
