@@ -12,6 +12,11 @@
   padding-right: toRem(16);
   padding-top: toRem(8);
   border-top: 4px solid $footerborder;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
 
   @include tablet {
     padding-left: toRem(36);
