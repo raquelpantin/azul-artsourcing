@@ -1,10 +1,8 @@
 import "./ArtistProfilePage.scss";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import React, { useRef, useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import artist from "../../assets/images/li-shanting-AGy0SxTzqr8-unsplash.jpg";
 import back from "../../assets/icons/arrow_back_white_24dp.svg";
-import mail from "../../assets/icons/mail_white_24dp.svg";
 import chat from "../../assets/icons/chat_black_24dp.svg";
 import Banner from "../../components/Banner/Banner";
 import ArtistPortfolio from "../../components/ArtistPortfolio/ArtistPortfolio";
@@ -71,7 +69,11 @@ function ArtistProfilePage() {
             <h3 className="artist-profile__skill-header">Skillset</h3>
             <div className="artist-profile__skill-card">
               {(artist.skills ?? []).map((data) => {
-                return <p className="artist-profile__skill-btns">{data}</p>;
+                return (
+                  <p key={data.id} className="artist-profile__skill-btns">
+                    {data}
+                  </p>
+                );
               })}
               {/* <p className="artist-profile__skill-btns">oil painting</p>
               <p className="artist-profile__skill-btns">glass blowing</p>

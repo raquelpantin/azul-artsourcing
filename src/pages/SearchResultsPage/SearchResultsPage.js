@@ -1,46 +1,31 @@
 import "./SearchResultsPage.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import open from "../../assets/icons/arrow_circle_right_black_24dp.svg";
-import { Context } from "../../context";
 
-const SearchResultsPage = () => {
-  const [state] = useContext(Context);
-  const { artists } = state;
+const SearchResultsPage = (props) => {
+  const [artists, setArtists] = useState([]);
 
-  console.log(state.artists);
+  useEffect(() => {
+    axios
+      .get("http://localhost:7070/artist")
+      .then((res) => {
+        console.log(res.data);
+        setArtists(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-  if (artists === undefined || artists.length === 0) {
-    return <h2>No Search Results Found</h2>;
-  } else {
-    // const Search = () => {
-    //   const [searchParams] = useSearchParams();
-    //   console.log(searchParams.get("q"));
-    //   return searchParams.get("q");
-    // };
+  console.log(artists);
 
-    // const [searchParams] = useSearchParams();
-    // const test = searchParams.get("q");
-
-    // Search();
-    // const getSearch = () => {
-    //   axios
-    //     .get("http://localhost:7070/artist")
-    //     .then((response) => {
-    //       console.log(response.data);
-    //       setResults(response.data);
-    //     })
-    //     .catch((error) => console.log(error));
-    // };
-
-    // useEffect(() => {
-    //   getSearch();
-    // }, []);
-
-    return (
-      <div className="search-all">
-        {state.artists.map((artist) => {
+  return (
+    <div className="search-all">
+      {artists
+        .filter((artist) =>
+          artist.firstName.toLowerCase().includes(props.search.toLowerCase())
+        )
+        .map((artist) => {
           return (
             <div key={artist._id}>
               <div className="search-results">
@@ -70,9 +55,7 @@ const SearchResultsPage = () => {
             </div>
           );
         })}
-      </div>
-    );
-  }
+    </div>
+  );
 };
-
 export default SearchResultsPage;

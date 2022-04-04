@@ -10,40 +10,39 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import Private from "./pages/PrivateRoute/PrivateRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ContextController } from "./context";
+import React, { useState } from "react";
 
 function App() {
+  const [search, setSearch] = useState("");
+  console.log(search);
   return (
-    <ContextController>
-      <Router>
-        <div className="App">
-          <header className="App-header">
-            <PageHeader />
-          </header>
-          <main>
-            <Routes>
-              <Route path="/" exact element={<HomePage />} />
-              <Route path="/signup" element={<SignUpPage />} />
-              <Route path="/login" element={<LoginPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route
-                path="/search"
-                element={<Private Private={SearchResultsPage}></Private>}
-              />
-              <Route
-                path="/artist/:id"
-                element={<Private Private={ArtistProfilePage}></Private>}
-              />
-            </Routes>
-          </main>
-
-          <footer>
-            <PageFooter />
-          </footer>
-        </div>
-      </Router>
-    </ContextController>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <PageHeader search={search} setSearch={setSearch} />
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" exact element={<HomePage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route
+              path="/search"
+              element={<SearchResultsPage search={search} />}
+            />
+            <Route
+              path="/artist/:id"
+              element={<Private Private={ArtistProfilePage}></Private>}
+            />
+          </Routes>
+        </main>
+        <footer>
+          <PageFooter />
+        </footer>
+      </div>
+    </Router>
   );
 }
 

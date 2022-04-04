@@ -1,52 +1,35 @@
 import "./PageHeader.scss";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import menu from "../../assets/icons/menu_white_24dp.svg";
 import close from "../../assets/icons/close_white_24dp.svg";
 import searchIcon from "../../assets/icons/search_black_24dp.svg";
-import { Context } from "../../context";
 
-const PageHeader = () => {
+const PageHeader = (props) => {
   const [isMobile, setIsMobile] = useState(false);
-  const [state, setState] = useContext(Context);
-  const [search, setSearch] = useState("");
-  const [artistProfile, setArtistProfile] = useState("");
+
   const navigate = useNavigate();
-
-  // const searchSubmit = (event) => {
-  //   event.preventDefault();
-  //   if (term === "") {
-  //     return;
-  //   }
-  //   const urlEncodedTerm = encodeURI(term);
-  //   console.log(term);
-  //   navigate({
-  //     pathname: "/search",
-  //     search: `?q=${urlEncodedTerm}`,
-  //   });
-
-  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (search === "") {
+    if (props.search === "") {
       return;
     }
-    setArtistProfile(search);
-    navigate("/search");
-    // setSearch("");
+
+    navigate({
+      pathname: "/search",
+      search: props.search,
+    });
   };
 
   const onChange = (e) => {
-    setSearch(e.target.value);
+    props.setSearch(e.target.value);
   };
 
   function logout() {
     localStorage.clear();
     navigate("/");
   }
-
-  console.log(search); //returns search input
 
   return (
     <div className="navbar-position">
@@ -59,7 +42,7 @@ const PageHeader = () => {
             className="navbar__search-input"
             type="text"
             placeholder="Search..."
-            value={search}
+            value={props.search}
             onChange={onChange}
           ></input>
           <img
