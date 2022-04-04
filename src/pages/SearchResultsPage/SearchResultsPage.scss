@@ -18,6 +18,7 @@
   padding-bottom: 0.25rem;
   align-items: center;
   justify-content: center;
+
   @include tablet {
     margin: 0 toRem(32);
     width: 100%;
@@ -31,9 +32,9 @@
 .search-all {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
+  height: toRem(650);
 }
 
 .search-pfp-container {
@@ -63,6 +64,10 @@
   @include desktop {
     width: 7rem;
     height: 7rem;
+  }
+
+  &:hover {
+    border: 2px solid $btnfill;
   }
 }
 
@@ -154,15 +159,25 @@
   @include desktop {
     height: 3rem;
   }
+
+  &:hover {
+    position: relative;
+    right: -4px;
+  }
 }
 
 .border {
   border-bottom: 2px solid $heroborder;
   width: 16rem;
+  margin-bottom: 0.25rem;
   @include tablet {
     width: 25rem;
   }
   @include desktop {
     width: 30rem;
   }
+}
+
+.search-link {
+  text-decoration: none;
 }

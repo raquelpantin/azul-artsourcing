@@ -204,46 +204,7 @@ function SignUpPage() {
             </div>
           )}
         </div>
-        {/* <label className="signup__label" htmlFor="firstName">
-          FIRST NAME
-        </label>
-        <input
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          className="signup__input"
-          type="text"
-          name="firstName"
-        ></input>
-        <label className="signup__label" htmlFor="lasttName">
-          LAST NAME
-        </label>
-        <input
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          className="signup__input"
-          type="text"
-          name="lastName"
-        ></input>
-        <label className="signup__label" htmlFor="email">
-          EMAIL
-        </label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="signup__input"
-          type="text"
-          name="email"
-        ></input>
-        <label className="signup__label" htmlFor="password">
-          PASSWORD
-        </label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="signup__input"
-          type="password"
-          name="password"
-        ></input> */}
+
         <button className="signup__button" type="submit">
           CREATE ACCOUNT
         </button>

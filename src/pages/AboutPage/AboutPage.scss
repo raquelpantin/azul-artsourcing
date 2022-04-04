@@ -50,7 +50,9 @@
   font-size: toRem(13);
   width: 40%;
   line-height: 1.5rem;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
+  border-left: 2px solid $btnfill;
+  padding-left: 0.25rem;
   @include tablet {
     font-size: toRem(24);
     line-height: 2.5rem;
@@ -58,6 +60,7 @@
     border-bottom: solid 2px $btnfill;
     padding: toRem(12) 0;
     margin-left: 2rem;
+    border-left: none;
   }
   @include desktop {
     margin-right: toRem(60);
@@ -68,7 +71,9 @@
   font-size: toRem(13);
   width: 40%;
   line-height: 1.5rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
+  padding-right: 0.25rem;
+  border-right: solid 2px $btnfill;
   @include tablet {
     font-size: toRem(24);
     line-height: 2.5rem;
@@ -76,6 +81,7 @@
     border-bottom: solid 2px $btnfill;
     padding: toRem(12) 0;
     margin-right: 2rem;
+    border-right: none;
   }
 }
 

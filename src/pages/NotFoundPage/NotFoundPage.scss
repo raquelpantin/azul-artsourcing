@@ -5,23 +5,27 @@
 @use "../../styles/partials/_mixins.scss" as *;
 @use "../../styles/partials/_function.scss" as *;
 
-.welcome__hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
-    url("../../assets/images/loginhero.jpg");
-  height: 7rem;
-  background-position: center;
+.notfound__hero {
+  background-image: url("../../assets/images/404.jpg");
+  height: 15rem;
+  width: 100%;
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   margin-top: toRem(16);
+  @include tablet {
+    height: 30rem;
+  }
 
   @include desktop {
-    height: 10rem;
+    height: 35rem;
   }
 }
 
-.welcome__text-container {
+.notfound__text-container {
   display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: 100%;
   height: 100%;
@@ -29,24 +33,16 @@
   align-items: center;
 }
 
-.welcome__text {
+.notfound__text {
   color: $white;
   font-size: toRem(28);
   font-weight: $semibold;
   filter: $dropshadow;
-  opacity: 0;
-  animation: ani2 0.75s ease-in forwards;
 
   @include tablet {
     font-size: toRem(32);
   }
   @include desktop {
     font-size: toRem(42);
-  }
-}
-
-@keyframes ani2 {
-  100% {
-    opacity: 1;
   }
 }

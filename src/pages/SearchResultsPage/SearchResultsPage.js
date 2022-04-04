@@ -17,42 +17,60 @@ const SearchResultsPage = (props) => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(artists);
-
   return (
     <div className="search-all">
       {artists
-        .filter((artist) =>
-          artist.firstName.toLowerCase().includes(props.search.toLowerCase())
-        )
+        .filter((artist) => {
+          if (
+            artist.firstName.toLowerCase().includes(props.search.toLowerCase())
+          ) {
+            return true;
+          } else if (
+            artist.lastName.toLowerCase().includes(props.search.toLowerCase())
+          ) {
+            return true;
+          } else if (
+            artist.city.toLowerCase().includes(props.search.toLowerCase())
+          ) {
+            return true;
+          } else if (
+            artist.state.toLowerCase().includes(props.search.toLowerCase())
+          ) {
+            return true;
+          } else if (
+            artist.skills[0].toLowerCase().includes(props.search.toLowerCase())
+          ) {
+            return true;
+          }
+        })
         .map((artist) => {
           return (
-            <div key={artist._id}>
-              <div className="search-results">
-                <div className="search-container">
-                  <div className="search-pfp-container">
-                    <img className="search-pfp" src={artist.avatar} />
-                  </div>
-                  <div className="search-artist-info">
-                    <h3 className="search-name">
-                      {artist.firstName} {artist.lastName}
-                    </h3>
-                    <p className="search-location">
-                      {artist.city}, {artist.state}
-                    </p>
-                  </div>
-                  <div className="search-info-right">
-                    <p className="search-price">
-                      Price Range: {artist.pricRange}
-                    </p>
-                    <Link className="search-link" to={`/artist/${artist._id}`}>
+            <Link className="search-link" to={`/artist/${artist._id}`}>
+              <div key={artist._id}>
+                <div className="search-results">
+                  <div className="search-container">
+                    <div className="search-pfp-container">
+                      <img className="search-pfp" src={artist.avatar} />
+                    </div>
+                    <div className="search-artist-info">
+                      <h3 className="search-name">
+                        {artist.firstName} {artist.lastName}
+                      </h3>
+                      <p className="search-location">
+                        {artist.city}, {artist.state}
+                      </p>
+                    </div>
+                    <div className="search-info-right">
+                      <p className="search-price">
+                        Price Range: {artist.pricRange}
+                      </p>
                       <img className="search-open" src={open} />
-                    </Link>
+                    </div>
                   </div>
                 </div>
+                <div className="border"></div>
               </div>
-              <div className="border"></div>
-            </div>
+            </Link>
           );
         })}
     </div>

@@ -15,7 +15,6 @@ const PageHeader = (props) => {
     if (props.search === "") {
       return;
     }
-
     navigate({
       pathname: "/search",
       search: props.search,
