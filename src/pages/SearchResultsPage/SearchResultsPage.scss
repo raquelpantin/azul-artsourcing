@@ -38,6 +38,10 @@
 
 .search-pfp-container {
   padding-right: toRem(8);
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
   @include tablet {
     padding-right: toRem(12);
   }
@@ -48,8 +52,8 @@
 
 .search-pfp {
   border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   object-fit: cover;
   border: 2px solid $header;
   @include tablet {
@@ -72,7 +76,7 @@
 }
 
 .search-name {
-  font-size: toRem(16);
+  font-size: toRem(14);
   font-weight: $semibold;
   padding-bottom: 0.1rem;
   @include tablet {
@@ -85,7 +89,7 @@
 }
 
 .search-location {
-  font-size: toRem(12);
+  font-size: toRem(10);
   padding-bottom: 0.1rem;
   @include tablet {
     font-size: toRem(16);
@@ -118,8 +122,9 @@
   display: flex;
   flex-direction: column;
   padding-top: 0.3rem;
-  align-items: flex-end;
+  align-items: center;
   padding-left: 1rem;
+  width: 100%;
   @include tablet {
     margin-left: toRem(32);
   }
