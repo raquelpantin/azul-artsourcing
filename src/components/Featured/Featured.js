@@ -1,9 +1,11 @@
 import "./Featured.scss";
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import "swiper/scss/scrollbar";
+import Private from "../../pages/PrivateRoute/PrivateRoute";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import image1 from "../../assets/images/im1.jpg";
@@ -48,66 +50,155 @@ function Featured() {
         }}
       >
         <SwiperSlide>
-          <div className="card">
-            <div className="card-image">
-              <img src={image1} />
-            </div>
-            <div className="details">
-              <h2>
-                John Doe <span className="job-title">Pen & Ink</span>
-              </h2>
-            </div>
-          </div>
+          {localStorage.getItem("user") ? (
+            <Link to={"/artist/624904a1ee912cc4359a0c37"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image1} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Hanae Taylor <span className="job-title">Pen & Ink</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <Link to={"/login"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image1} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Hanae Taylor <span className="job-title">Pen & Ink</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          )}
         </SwiperSlide>
         <SwiperSlide>
-          <div className="card">
-            <div className="card-image">
-              <img src={image2} />
-            </div>
-            <div className="details">
-              <h2>
-                Jeff Green <span className="job-title">Digital Art</span>
-              </h2>
-            </div>
-          </div>
+          {localStorage.getItem("user") ? (
+            <Link to={"/artist/624904a1ee912cc4359a0c3f"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image2} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Stacey Hurley <span className="job-title">Digital Art</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <Link to={"/login"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image2} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Stacey Hurley <span className="job-title">Digital Art</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          )}
         </SwiperSlide>
         <SwiperSlide>
-          <div className="card">
-            <div className="card-image">
-              <img src={image3} />
-            </div>
-            <div className="details">
-              <h2>
-                Elizabeth Gaillard{" "}
-                <span className="job-title">Oil on Canvas</span>
-              </h2>
-            </div>
-          </div>
+          {localStorage.getItem("user") ? (
+            <Link to={"/artist/624904a1ee912cc4359a0c3d"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image3} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Charlotte Bryan
+                    <span className="job-title">Oil on Canvas</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <Link to={"/login"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image3} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Charlotte Bryan
+                    <span className="job-title">Oil on Canvas</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          )}
         </SwiperSlide>
         <SwiperSlide>
-          <div className="card">
-            <div className="card-image">
-              <img src={image4} />
-            </div>
-            <div className="details">
-              <h2>
-                Juho Haataja{" "}
-                <span className="job-title">Acyrlic on Canvas</span>
-              </h2>
-            </div>
-          </div>
+          {localStorage.getItem("user") ? (
+            <Link to={"/artist/624904a1ee912cc4359a0c40"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image4} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Kiona Snider
+                    <span className="job-title">Acyrlic on Canvas</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <Link to={"/login"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image4} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Kiona Snider
+                    <span className="job-title">Acyrlic on Canvas</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          )}
         </SwiperSlide>
         <SwiperSlide>
-          <div className="card">
-            <div className="card-image">
-              <img src={image5} />
-            </div>
-            <div className="details">
-              <h2>
-                Arthur Lawrence <span className="job-title">Digital Art</span>
-              </h2>
-            </div>
-          </div>
+          {localStorage.getItem("user") ? (
+            <Link to={"/artist/624904a1ee912cc4359a0c33"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image5} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Leslie Valentine
+                    <span className="job-title">Digital Art</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          ) : (
+            <Link to={"/login"}>
+              <div className="card">
+                <div className="card-image">
+                  <img src={image5} />
+                </div>
+                <div className="details">
+                  <h2>
+                    Leslie Valentine
+                    <span className="job-title">Digital Art</span>
+                  </h2>
+                </div>
+              </div>
+            </Link>
+          )}
         </SwiperSlide>
       </Swiper>
     </div>
