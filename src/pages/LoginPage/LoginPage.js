@@ -46,79 +46,65 @@ function LoginPage() {
   }
 
   return (
-    <div className="form-container__login">
-      <form className="login-form" onSubmit={loginUser}>
-        <h1 className="login__header">Login</h1>
-        <div className="login__field">
-          <TextField
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="login__input"
-            type="text"
-            name="email"
-            variant="outlined"
-            size="small"
-            label="Email"
-          />
-        </div>
-
-        <div className="login__field">
-          <FormControl
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            variant="outlined"
-            size="small"
-            className="signup__input"
-          >
-            <InputLabel>Password</InputLabel>
-            <OutlinedInput
-              label="Password"
-              type={showPassword ? "text" : "password"}
-              endAdornment={
-                <InputAdornment>
-                  <IconButton
-                    edge="end"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
-                  </IconButton>
-                </InputAdornment>
-              }
+    <div className="login-page">
+      <div className="form-container__login">
+        <form className="login-form" onSubmit={loginUser}>
+          <h1 className="login__header">Login</h1>
+          <div className="login__field">
+            <TextField
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="login__input"
+              type="text"
+              name="email"
+              variant="outlined"
+              size="small"
+              label="Email"
             />
-          </FormControl>
-        </div>
-        {/* <label className="login__label" htmlFor="email">
-          EMAIL
-        </label>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="login__input"
-          type="text"
-          name="email"
-        ></input>
-        <label className="login__label" htmlFor="password">
-          PASSWORD
-        </label>
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="login__input"
-          type="password"
-          name="password"
-        ></input> */}
-        <button className="login__button" type="submit">
-          LOGIN
-        </button>
-        <p className="login__footnote">
-          Need an account?
-          <span className="login__footnote-link">
-            <Link className="login__footnote-link" to="/signup">
-              Sign Up
-            </Link>
-          </span>
-        </p>
-      </form>
+          </div>
+
+          <div className="login__field">
+            <FormControl
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              variant="outlined"
+              size="small"
+              className="signup__input"
+            >
+              <InputLabel>Password</InputLabel>
+              <OutlinedInput
+                label="Password"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment>
+                    <IconButton
+                      edge="end"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? (
+                        <VisibilityIcon />
+                      ) : (
+                        <VisibilityOffIcon />
+                      )}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </div>
+          <button className="login__button" type="submit">
+            LOGIN
+          </button>
+          <p className="login__footnote">
+            Need an account?
+            <span className="login__footnote-link">
+              <Link className="login__footnote-link" to="/signup">
+                Sign Up
+              </Link>
+            </span>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }

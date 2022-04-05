@@ -20,6 +20,15 @@
   }
 }
 
+.login-page {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  @include tablet {
+    padding-top: 1rem;
+    padding-bottom: 6rem;
+  }
+}
+
 .login__field {
   margin-bottom: 1.5rem;
 }

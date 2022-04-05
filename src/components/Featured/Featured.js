@@ -1,11 +1,10 @@
 import "./Featured.scss";
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 import "swiper/scss/scrollbar";
-import Private from "../../pages/PrivateRoute/PrivateRoute";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination, Autoplay } from "swiper";
 import image1 from "../../assets/images/im1.jpg";
