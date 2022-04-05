@@ -9,6 +9,7 @@ import SearchResultsPage from "./pages/SearchResultsPage/SearchResultsPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import MessagePage from "./pages/MessagePage/MessagePage";
 import Private from "./pages/PrivateRoute/PrivateRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
@@ -37,6 +38,10 @@ function App() {
             <Route
               path="/artist/:id"
               element={<Private Private={ArtistProfilePage}></Private>}
+            />
+            <Route
+              path="/message/:id"
+              element={<Private Private={MessagePage}></Private>}
             />
           </Routes>
         </main>

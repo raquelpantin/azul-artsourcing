@@ -1,0 +1,152 @@
+@use "../../App.scss" as *;
+@use "../../styles/partials/_colors.scss" as *;
+@use "../../styles/partials/_fonts.scss" as *;
+@use "../../styles/partials/_variables.scss" as *;
+@use "../../styles/partials/_mixins.scss" as *;
+@use "../../styles/partials/_function.scss" as *;
+
+.message-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+    url("../../assets/images/loginhero.jpg");
+  height: 3rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: toRem(16);
+  @include tablet {
+    height: 5rem;
+    background-position: bottom, left;
+  }
+  @include desktop {
+    height: 5rem;
+    background-position: top;
+  }
+}
+
+.message-content__container {
+  @include layout;
+  border: 2px solid $header;
+  box-shadow: 0 4px 2px -2px lightgray;
+  height: 20rem;
+  border-radius: 20px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  background-color: $white;
+  @include tablet {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.message-back__icon {
+  position: absolute;
+  top: 0.55rem;
+  z-index: 2;
+  margin-left: 0.5rem;
+  width: 2rem;
+  cursor: pointer;
+  @include tablet {
+    width: 3rem;
+    top: 0.8rem;
+    margin-left: 1.5rem;
+  }
+
+  &:hover {
+    @include slideAnimation;
+  }
+}
+
+.message-return__container {
+  position: relative;
+}
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+  @include layout;
+  @include tablet {
+    align-items: flex-end;
+    @include layout;
+  }
+}
+
+.message-title {
+  color: $text;
+  opacity: 0.75;
+  font-size: toRem(11);
+  text-align: center;
+  padding-top: 0.35rem;
+  font-weight: $semibold;
+}
+
+.message-text {
+  font-size: toRem(11.5);
+  color: $card;
+  word-wrap: break-word;
+}
+
+.message-button {
+  background-color: $btnfill;
+  color: $skillblue;
+  font-size: toRem(14);
+  font-weight: $semibold;
+  padding: toRem(10) 0;
+  border: solid 1px $heroborder;
+  border-radius: 4px;
+  margin-top: 0.75rem;
+  margin-bottom: 6rem;
+  cursor: pointer;
+
+  @include tablet {
+    height: toRem(42);
+    font-size: toRem(16);
+    width: 25%;
+  }
+}
+
+.message-sent {
+  width: auto;
+  margin-top: 0.5rem;
+  margin-right: 2rem;
+  margin-left: 8rem;
+  background: $tagfill;
+  border-radius: 6px;
+  padding: 10px;
+  text-align: center;
+  font-weight: $semibold;
+  color: #fff;
+  position: relative;
+  @include tablet {
+    margin-left: 20rem;
+  }
+}
+
+.sb1:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid $tagfill;
+  border-right: 10px solid transparent;
+  border-top: 10px solid $tagfill;
+  border-bottom: 10px solid transparent;
+  right: -19px;
+  top: 6px;
+}
+
+.message-dtg {
+  font-size: toRem(9);
+  color: $heroborder;
+  text-align: right;
+  margin-right: 3rem;
+  padding-top: 0.2rem;
+}
+
+.message-input {
+  background-color: $white;
+  box-shadow: 0 4px 2px -2px lightgray;
+  @include tablet {
+    width: 50%;
+  }
+}

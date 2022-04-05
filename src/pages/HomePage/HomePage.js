@@ -42,7 +42,9 @@ function HomePage() {
 
       <h2 className="featured-title">Featured</h2>
       <div className="featured-slider">
-        <Featured />
+        <div className="featured-container">
+          <Featured />
+        </div>
       </div>
     </div>
   );

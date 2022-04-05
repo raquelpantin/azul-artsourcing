@@ -1,5 +1,5 @@
 import "./ArtistProfilePage.scss";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import back from "../../assets/icons/arrow_back_white_24dp.svg";
@@ -51,12 +51,17 @@ function ArtistProfilePage() {
                   {artist.city}, {artist.state}
                 </p>
               </div>
-              <div className="artist-profile__message">
-                <img className="artist-profile__message-icon" src={chat} />
-                <p className="artist-profile__message-text">
-                  Message {artist.firstName}
-                </p>
-              </div>
+              <Link
+                className="artist-profile__message-link"
+                to={`/message/${id}`}
+              >
+                <div className="artist-profile__message">
+                  <img className="artist-profile__message-icon" src={chat} />
+                  <p className="artist-profile__message-text">
+                    Message {artist.firstName}
+                  </p>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -75,9 +80,6 @@ function ArtistProfilePage() {
                   </p>
                 );
               })}
-              {/* <p className="artist-profile__skill-btns">oil painting</p>
-              <p className="artist-profile__skill-btns">glass blowing</p>
-              <p className="artist-profile__skill-btns">pen & ink</p> */}
             </div>
           </div>
           <ArtistPortfolio portfolio={artist.portfolio} />

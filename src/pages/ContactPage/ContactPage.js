@@ -38,80 +38,88 @@ function ContactPage() {
   }
 
   return (
-    <div className="contact-container">
-      <form className="contact-form" onSubmit={sendEmail}>
-        <h1 className="contact__header">Contact Us</h1>
-        <div className="contact__field">
-          <TextField
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="contact__input"
-            type="text"
-            name="name"
-            label="Name"
-            variant="outlined"
-            size="small"
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="start">
-                  <BadgeOutlinedIcon />
-                </InputAdornment>
-              ),
-            }}
-          />
+    <div className="contact-page">
+      <div className="contact-container">
+        <form className="contact-form" onSubmit={sendEmail}>
+          <h1 className="contact__header">Contact Us</h1>
+          <div className="contact__field">
+            <TextField
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="contact__input"
+              type="text"
+              name="name"
+              label="Name"
+              variant="outlined"
+              size="small"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="start">
+                    <BadgeOutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
 
-          <FormHelperText className="contact__error-container">
-            {!name && <span className="contact__error">* Required Field</span>}
-          </FormHelperText>
-        </div>
-        <div className="contact__field">
-          <TextField
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="contact__input"
-            type="text"
-            name="email"
-            label="Email"
-            variant="outlined"
-            size="small"
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="start">
-                  <EmailOutlinedIcon />
-                </InputAdornment>
-              ),
-            }}
-          />
-          <FormHelperText className="contact__error-container">
-            {!email && <span className="contact__error">* Required Field</span>}
-          </FormHelperText>
-          {email && (
-            <div className="contact__email-check">
-              <div>
-                <small
-                  className={emailCheck ? "contact__success" : "signup__error"}
-                >
-                  must be in format example@mail.com
-                </small>
+            <FormHelperText className="contact__error-container">
+              {!name && (
+                <span className="contact__error">* Required Field</span>
+              )}
+            </FormHelperText>
+          </div>
+          <div className="contact__field">
+            <TextField
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="contact__input"
+              type="text"
+              name="email"
+              label="Email"
+              variant="outlined"
+              size="small"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="start">
+                    <EmailOutlinedIcon />
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <FormHelperText className="contact__error-container">
+              {!email && (
+                <span className="contact__error">* Required Field</span>
+              )}
+            </FormHelperText>
+            {email && (
+              <div className="contact__email-check">
+                <div>
+                  <small
+                    className={
+                      emailCheck ? "contact__success" : "signup__error"
+                    }
+                  >
+                    must be in format example@mail.com
+                  </small>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-        <TextField
-          id="outlined-multiline-static"
-          label="Message"
-          name="message"
-          multiline
-          rows={3}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          className="contact__input"
-        />
+            )}
+          </div>
+          <TextField
+            id="outlined-multiline-static"
+            label="Message"
+            name="message"
+            multiline
+            rows={3}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="contact__input"
+          />
 
-        <button className="contact__button" type="submit">
-          SUBMIT
-        </button>
-      </form>
+          <button className="contact__button" type="submit">
+            SUBMIT
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

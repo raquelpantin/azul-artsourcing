@@ -5,6 +5,15 @@
 @use "../../styles/partials/_mixins.scss" as *;
 @use "../../styles/partials/_function.scss" as *;
 
+.contact-page {
+  background-color: $bg;
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
+  @include tablet {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+  }
+}
 .contact-container {
   background-color: $white;
   border-radius: 6px;

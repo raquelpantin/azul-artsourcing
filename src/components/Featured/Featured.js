@@ -15,99 +15,102 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 function Featured() {
   return (
-    <Swiper
-      spaceBetween={25}
-      slidesPerView={2}
-      navigation
-      autoplay={{
-        delay: 3000,
-        disableOnInteraction: false,
-      }}
-      loop={true}
-      pagination={{ clickable: true }}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
-      breakpoints={{
-        400: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
-        635: {
-          slidesPerView: 4,
-          spaceBetween: 25,
-        },
-        900: {
-          slidesPerView: 5,
-          spaceBetween: 20,
-        },
-        1280: {
-          slidesPerView: 4,
-          spaceBetween: 50,
-        },
-      }}
-    >
-      <SwiperSlide>
-        <div className="card">
-          <div className="card-image">
-            <img src={image1} />
+    <div className="featured-container">
+      <Swiper
+        spaceBetween={25}
+        slidesPerView={2}
+        navigation
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        pagination={{ clickable: true }}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+        breakpoints={{
+          400: {
+            slidesPerView: 3,
+            spaceBetween: 15,
+          },
+          635: {
+            slidesPerView: 4,
+            spaceBetween: 25,
+          },
+          900: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        }}
+      >
+        <SwiperSlide>
+          <div className="card">
+            <div className="card-image">
+              <img src={image1} />
+            </div>
+            <div className="details">
+              <h2>
+                John Doe <span className="job-title">Pen & Ink</span>
+              </h2>
+            </div>
           </div>
-          <div className="details">
-            <h2>
-              John Doe <span className="job-title">Pen & Ink</span>
-            </h2>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="card">
+            <div className="card-image">
+              <img src={image2} />
+            </div>
+            <div className="details">
+              <h2>
+                Jeff Green <span className="job-title">Digital Art</span>
+              </h2>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="card">
-          <div className="card-image">
-            <img src={image2} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="card">
+            <div className="card-image">
+              <img src={image3} />
+            </div>
+            <div className="details">
+              <h2>
+                Elizabeth Gaillard{" "}
+                <span className="job-title">Oil on Canvas</span>
+              </h2>
+            </div>
           </div>
-          <div className="details">
-            <h2>
-              Jeff Green <span className="job-title">Digital Art</span>
-            </h2>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="card">
+            <div className="card-image">
+              <img src={image4} />
+            </div>
+            <div className="details">
+              <h2>
+                Juho Haataja{" "}
+                <span className="job-title">Acyrlic on Canvas</span>
+              </h2>
+            </div>
           </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="card">
-          <div className="card-image">
-            <img src={image3} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="card">
+            <div className="card-image">
+              <img src={image5} />
+            </div>
+            <div className="details">
+              <h2>
+                Arthur Lawrence <span className="job-title">Digital Art</span>
+              </h2>
+            </div>
           </div>
-          <div className="details">
-            <h2>
-              Elizabeth Gaillard{" "}
-              <span className="job-title">Oil on Canvas</span>
-            </h2>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="card">
-          <div className="card-image">
-            <img src={image4} />
-          </div>
-          <div className="details">
-            <h2>
-              Juho Haataja <span className="job-title">Acyrlic on Canvas</span>
-            </h2>
-          </div>
-        </div>
-      </SwiperSlide>
-      <SwiperSlide>
-        <div className="card">
-          <div className="card-image">
-            <img src={image5} />
-          </div>
-          <div className="details">
-            <h2>
-              Arthur Lawrence <span className="job-title">Digital Art</span>
-            </h2>
-          </div>
-        </div>
-      </SwiperSlide>
-    </Swiper>
+        </SwiperSlide>
+      </Swiper>
+    </div>
   );
 }
 

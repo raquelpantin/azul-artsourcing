@@ -11,13 +11,13 @@
   width: auto;
   @include layout;
   color: $text;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   @include tablet {
-    margin-top: 2rem;
+    padding-top: 2rem;
   }
   @include desktop {
-    margin-top: 3.5rem;
+    padding-top: 3.5rem;
   }
 }
 
