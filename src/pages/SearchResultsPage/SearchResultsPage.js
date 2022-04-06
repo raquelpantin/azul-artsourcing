@@ -38,7 +38,10 @@ const SearchResultsPage = (props) => {
           ) {
             return true;
           } else if (
-            artist.skills[0].toLowerCase().includes(props.search.toLowerCase())
+            artist.skills
+              .toString()
+              .toLowerCase()
+              .includes(props.search.toLowerCase())
           ) {
             return true;
           }

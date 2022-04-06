@@ -34,7 +34,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: toRem(650);
+  min-height: toRem(600);
 }
 
 .search-pfp-container {
