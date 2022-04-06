@@ -1,40 +1,55 @@
 import "./MessagePage.scss";
 import back from "../../assets/icons/arrow_back_white_24dp.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
-import jwtDecode from "jwt-decode";
 import { TextField, InputAdornment } from "@mui/material";
-import axios from "axios";
+
+const getMessagesLS = () => {
+  const data = localStorage.getItem("Message");
+  if (data) {
+    return JSON.parse(data);
+  } else {
+    return [];
+  }
+};
 
 function MessagePage() {
-  const [message, setMessage] = useState({
-    text: "",
-  });
+  const [messageValue, setMessageValue] = useState("");
+
+  const [messages, setMessages] = useState(getMessagesLS());
+  console.log(messages);
+
   const navigate = useNavigate();
 
-  const onChange = (e) => {
-    const { name, value } = e.target;
-    setMessage((prevInput) => {
-      return {
-        ...prevInput,
-        [name]: value,
-      };
-    });
-    console.log(message);
+  let today = new Date();
+  let date =
+    today.getMonth() +
+    1 +
+    "/" +
+    today.getDate() +
+    "/" +
+    today.getFullYear().toString().slice(-2);
+  let time = today.getHours() + ":" + today.getMinutes();
+  let dateTime = date + " at " + time;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const date = new Date();
+    const time = date.getTime();
+
+    let messageObj = {
+      ID: time,
+      MessageValue: messageValue,
+    };
+    setMessages([...messages, messageObj]);
+    setMessageValue("");
   };
 
-  const sendMessage = (e) => {
-    e.prevent.default();
-    const newMessage = {
-      text: message.text,
-    };
-    axios.post("http://localhost:7070/newmessage", newMessage);
-    console.log(newMessage);
-    setMessage({
-      text: "",
-    });
-  };
+  useEffect(() => {
+    localStorage.setItem("Message", JSON.stringify(messages));
+  }, [messages]);
 
   return (
     <div>
@@ -47,27 +62,35 @@ function MessagePage() {
         <div className="message-banner"></div>
       </div>
 
-      <div className="message-content__container">
-        <h2 className="message-title">Your Conversation with ARTIST</h2>
-        <div className="message-sent sb1">
-          <p className="message-text">
-            Hello! Are you available for a commission?
-          </p>
+      {messages.length == 0 && (
+        <div className="message-content__container">
+          <h2 className="message-title">Start your conversation here!</h2>
         </div>
-        <p className="message-dtg">sent 4/1/2022 at 5:18pm</p>
-      </div>
-      <form className="message-form">
+      )}
+
+      {messages.length > 0 && (
+        <div className="message-content__container">
+          <h2 className="message-title">AZUL Messaging</h2>
+          {messages.map((singleMessage) => (
+            <>
+              <div className="message-sent sb1" key={singleMessage.ID}>
+                <p className="message-text">{singleMessage.MessageValue}</p>
+              </div>
+              <p className="message-dtg">sent {dateTime}</p>
+            </>
+          ))}
+        </div>
+      )}
+
+      <form className="message-form" onSubmit={handleSubmit}>
         <TextField
-          onChange={onChange}
+          onChange={(e) => setMessageValue(e.target.value)}
           className="message-input"
           id="outlined-multiline-static"
           label="Message"
           placeholder="Start typing..."
-          name="text"
-          value={message.text}
+          value={messageValue}
           size="small"
-          //   multiline
-          //   rows={1}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -76,7 +99,7 @@ function MessagePage() {
             ),
           }}
         />
-        <button onSubmit={sendMessage} className="message-button" type="submit">
+        <button className="message-button" type="submit">
           Send
         </button>
       </form>
