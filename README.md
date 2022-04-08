@@ -1,12 +1,14 @@
-# AZUL
-
 ![Azul logo](./src/assets/images/readme/logo.png)
 
-AZUL is an art sourcing platform that connects artists to potential customers.
+AZUL is an art sourcing platform that connects artists to art lovers.
 
-# Getting Started with Create React App
+### Problem Space
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+As both an artist & art collector, I wanted to create a platform that showcases the value of art by connecting artists with a customer base.
+
+## Before We Begin...
+
+Please ensure you also use the [AZUL SERVER REPO](https://github.com/raquelpantin/azul-server) in order to access the server side of this application.
 
 ## Available Scripts
 
