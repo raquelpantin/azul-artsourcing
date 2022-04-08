@@ -35,4 +35,4 @@ I hope you enjoyed the AZUL experience! If you have any questions or comments, I
 
 [Linkedin](https://www.linkedin.com/in/raquelpantin/) <br />
 
-[Email](raquel.pantin@gmail.com)
+Email: raquel.pantin@gmail.com
