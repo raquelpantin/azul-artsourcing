@@ -25,6 +25,7 @@ npm run server
 # Frontend
 cd frontend
 npm install
+npm start
 ```
 
 ### Connect With Me!
