@@ -1,14 +1,14 @@
 ![Azul logo](./src/assets/images/readme/azul-logo.png)
 
-#### Problem Space
+### Problem Space
 
 As both an artist & art collector, art is something near and dear to my heart. I wanted to create a platform that showcases the value of art by connecting artists with a customer base.
 
-#### Tech Stack
+### Tech Stack
 
 ![tech stack](./src/assets/images/readme/techstack.png)
 
-#### Before We Begin...
+### Before We Begin...
 
 Please ensure you also use the [AZUL SERVER REPO](https://github.com/raquelpantin/azul-server) in order to access the server side of this application.
 
@@ -29,7 +29,7 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-#### Connect With Me!
+### Connect With Me!
 
 I hope you enjoyed the AZUL experience! If you have any questions or comments, I'd love to connect with you!
 
