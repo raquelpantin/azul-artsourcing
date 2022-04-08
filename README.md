@@ -1,3 +1,9 @@
+# AZUL
+
+![Azul logo](./src/assets/images/readme/logo.png)
+
+AZUL is an art sourcing platform that connects artists to potential customers.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
