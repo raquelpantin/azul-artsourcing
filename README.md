@@ -12,7 +12,21 @@ As both an artist & art collector, art is something near and dear to my heart. I
 
 Please ensure you also use the [AZUL SERVER REPO](https://github.com/raquelpantin/azul-server) in order to access the server side of this application.
 
-## Available Scripts
+### Setup
+
+Backend <br />  
+[AZUL SERVER REPO](https://github.com/raquelpantin/azul-server), rename the .envexample to .env and add your MONGO_URI
+
+```
+# Backend deps
+npm install
+
+npm run server
+
+# Frontend deps
+cd frontend
+npm install
+```
 
 In the project directory, you can run:
 
@@ -23,11 +37,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### Connect With Me!
 
