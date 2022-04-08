@@ -1,4 +1,4 @@
-![Azul logo](./src/assets/images/readme/logo.png)
+![Azul logo](./src/assets/images/readme/azul-logo.png)
 
 AZUL is an art sourcing platform that connects artists to art lovers.
 
