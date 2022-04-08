@@ -33,5 +33,6 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 I hope you enjoyed the AZUL experience! If you have any questions or comments, I'd love to connect with you!
 
-[Linkedin](https://www.linkedin.com/in/raquelpantin/)
+[Linkedin](https://www.linkedin.com/in/raquelpantin/) <br />
+
 [Email](raquel.pantin@gmail.com)
