@@ -2,11 +2,15 @@
 
 AZUL is an art sourcing platform that connects artists to art lovers.
 
-### Problem Space
+#### Problem Space
 
 As both an artist & art collector, I wanted to create a platform that showcases the value of art by connecting artists with a customer base.
 
-## Before We Begin...
+#### Tech Stack
+
+![tech stack](./src/assets/images/readme/techstack.png)
+
+#### Before We Begin...
 
 Please ensure you also use the [AZUL SERVER REPO](https://github.com/raquelpantin/azul-server) in order to access the server side of this application.
 
